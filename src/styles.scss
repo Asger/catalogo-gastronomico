@@ -1,1 +1,98 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~@fortawesome/fontawesome-free/scss/fontawesome.scss";
+@import "~@fortawesome/fontawesome-free/scss/solid.scss";
+@import "~@fortawesome/fontawesome-free/scss/regular.scss";
+@import "~@fortawesome/fontawesome-free/scss/brands.scss";
+
+body {
+  margin: 0 !important;
+}
+
+$color-principal: #ff8800;
+.color-principal {
+  color: $color-principal !important;
+}
+.border-principal {
+  border-color: $color-principal !important;
+  color: $color-principal !important;
+}
+
+/* Container de boostrap */
+.container {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+@media (min-width: 768px) {
+  .container {
+    max-width: 750px;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    max-width: 970px;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+  }
+}
+@media (min-width: 1400px) {
+  .container {
+    max-width: 1320px;
+  }
+}
+/* --------------------- */
+.p-menubar {
+  background-color: rgba(0, 0, 0, 0.8) !important;
+  border: none !important;
+}
+p-menubarsub {
+  margin: 0 0 0 auto !important;
+}
+.p-menuitem-link {
+  transition: all 0.3s ease-in-out !important;
+
+  margin-right: 0.6em;
+  font-size: 1.15em;
+  &:hover {
+    background-color: $color-principal !important;
+    .p-menuitem-icon {
+      color: #000 !important;
+    }
+    .p-menuitem-text {
+      color: #000 !important;
+    }
+    .p-submenu-icon {
+      color: #000 !important;
+    }
+  }
+}
+.p-menuitem-link-active {
+  background-color: $color-principal !important;
+  .p-menuitem-icon {
+    color: #000 !important;
+  }
+  .p-menuitem-text {
+    color: #000 !important;
+  }
+}
+
+/* Galeria del Inicio */
+.p-galleria-thumbnail-container {
+  height: 150px ;
+}
+.p-galleria-thumbnails-bottom  {
+  height: 100% ;
+}
+.p-galleria-content {
+  height: 100% ;
+  p-galleriaitem {
+    height: 100% ;
+  }
+  .p-galleria-item-wrapper{
+    height: 100%;
+  }
+}

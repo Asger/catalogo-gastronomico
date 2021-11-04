@@ -1,0 +1,7 @@
+:host ::ng-deep .p-menubar {
+  position: fixed !important;
+  width: 100%;
+  position: -webkit-sticky !important; // Needed for Safari browsers.
+  z-index: 100 !important; // This prevents elements to be seen through the toolbar.
+  top: 0 !important; // Required for "position: sticky" to take effect.
+}

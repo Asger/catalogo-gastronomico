@@ -1,0 +1,42 @@
+<div class="grid grid-nogutter surface-section text-800 h-screen">
+  <div
+    class="col-12 md:col-5 p-6 text-center md:text-left flex align-items-center"
+  >
+    <section class="mt-7 md:mt-0 info">
+      <span class="text-center block text-5xl md:text-6xl font-bold mb-1"
+        >Bienvenido a</span
+      >
+      <div
+        class="text-center text-6xl md:text-8xl color-principal font-bold mb-3"
+      >
+        Health & Food
+      </div>
+      <p class="mt-0 mb-4 text-lg line-height-3">
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Temporibus
+        excepturi, nisi, magni natus distinctio veritatis quasi animi deleniti,
+        possimus amet obcaecati labore! Nihil saepe veritatis a assumenda
+        corporis nam doloremque!
+      </p>
+      <div class="text-center mt-5">
+        <button pButton pRipple type="button" icon="pi pi-angle-down" class="p-button-rounded p-button-outlined border-principal"></button>
+      </div>
+    </section>
+  </div>
+  <div class="col-12 md:col-7 overflow-hidden">
+    <p-galleria [value]="images" [responsiveOptions]="responsiveOptions"  [numVisible]="4" [circular]="true"
+    [autoPlay]="true" [transitionInterval]="3000">
+      <ng-template pTemplate="item" let-item>
+          <img [src]="item.url" class="img-principal" />
+      </ng-template>
+      <ng-template pTemplate="thumbnail" let-item>
+          <div class="grid grid-nogutter justify-center caja-img p-1">
+              <img [src]="item.url" />
+          </div>
+      </ng-template>
+    </p-galleria>
+  </div>
+</div>
+
+
+
+<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
