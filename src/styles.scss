@@ -56,7 +56,7 @@ p-menubarsub {
   transition: all 0.3s ease-in-out !important;
 
   margin-right: 0.6em;
-  font-size: 1.15em;
+  font-size: 0.9em;
   &:hover {
     background-color: $color-principal !important;
     .p-menuitem-icon {
@@ -82,17 +82,17 @@ p-menubarsub {
 
 /* Galeria del Inicio */
 .p-galleria-thumbnail-container {
-  height: 150px ;
+  height: 130px;
 }
-.p-galleria-thumbnails-bottom  {
-  height: 100% ;
+.p-galleria-thumbnails-bottom {
+  height: 100%;
 }
 .p-galleria-content {
-  height: 100% ;
+  height: 100%;
   p-galleriaitem {
-    height: 100% ;
+    height: 100%;
   }
-  .p-galleria-item-wrapper{
+  .p-galleria-item-wrapper {
     height: 100%;
   }
 }

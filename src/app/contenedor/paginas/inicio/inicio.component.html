@@ -1,8 +1,17 @@
-<div class="grid grid-nogutter surface-section text-800 h-screen">
+<div class="grid grid-nogutter surface-section text-800">
   <div
-    class="col-12 md:col-5 p-6 text-center md:text-left flex align-items-center"
+    class="
+      col-12
+      md:col-5
+      p-6
+      text-center
+      md:text-left
+      flex
+      align-items-center
+      h-screen
+    "
   >
-    <section class="mt-7 md:mt-0 info">
+    <section class="mt-7 md:mt-2 info">
       <span class="text-center block text-5xl md:text-6xl font-bold mb-1"
         >Bienvenido a</span
       >
@@ -18,25 +27,131 @@
         corporis nam doloremque!
       </p>
       <div class="text-center mt-5">
-        <button pButton pRipple type="button" icon="pi pi-angle-down" class="p-button-rounded p-button-outlined border-principal"></button>
+        <button
+          pButton
+          pRipple
+          type="button"
+          icon="pi pi-angle-down"
+          class="p-button-rounded p-button-outlined border-principal"
+          (click)="scrollToElement(target)"
+        ></button>
       </div>
     </section>
   </div>
   <div class="col-12 md:col-7 overflow-hidden">
-    <p-galleria [value]="images" [responsiveOptions]="responsiveOptions"  [numVisible]="4" [circular]="true"
-    [autoPlay]="true" [transitionInterval]="3000">
+    <p-galleria
+      [value]="images"
+      [responsiveOptions]="responsiveOptions"
+      [numVisible]="4"
+      [circular]="true"
+      [autoPlay]="true"
+      [transitionInterval]="3000"
+    >
       <ng-template pTemplate="item" let-item>
-          <img [src]="item.url" class="img-principal" />
+        <img [src]="item.url" class="img-principal" />
       </ng-template>
       <ng-template pTemplate="thumbnail" let-item>
-          <div class="grid grid-nogutter justify-center caja-img p-1">
-              <img [src]="item.url" />
-          </div>
+        <div class="grid grid-nogutter justify-center caja-img p-1">
+          <img [src]="item.url" />
+        </div>
+      </ng-template>
+      <ng-template pTemplate="caption" let-item>
+        <div class="text-center">
+          <h4 style="margin-bottom: 0.5rem; color: #ffffff">Comida</h4>
+          <p>Holaaa</p>
+        </div>
       </ng-template>
     </p-galleria>
   </div>
 </div>
 
-
-
+<div #target class="surface-section px-4 py-8 md:px-6 lg:px-8 text-center">
+  <div class="mb-3 font-bold text-2xl">
+    <span class="text-900">One Product, </span>
+    <span class="text-blue-600">Many Solutions</span>
+  </div>
+  <div class="text-700 text-sm mb-6">
+    Ac turpis egestas maecenas pharetra convallis posuere morbi leo urna.
+  </div>
+  <div class="grid">
+    <div class="col-12 md:col-4 mb-4 px-5">
+      <span
+        class="p-3 shadow-2 mb-3 inline-block surface-card"
+        style="border-radius: 10px"
+      >
+        <i class="pi pi-desktop text-4xl text-blue-500"></i>
+      </span>
+      <div class="text-900 mb-3 font-medium">Built for Developers</div>
+      <span class="text-700 text-sm line-height-3"
+        >Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+        dolore eu fugiat nulla pariatur.</span
+      >
+    </div>
+    <div class="col-12 md:col-4 mb-4 px-5">
+      <span
+        class="p-3 shadow-2 mb-3 inline-block surface-card"
+        style="border-radius: 10px"
+      >
+        <i class="pi pi-lock text-4xl text-blue-500"></i>
+      </span>
+      <div class="text-900 mb-3 font-medium">End-to-End Encryption</div>
+      <span class="text-700 text-sm line-height-3"
+        >Risus nec feugiat in fermentum posuere urna nec. Posuere sollicitudin
+        aliquam ultrices sagittis.</span
+      >
+    </div>
+    <div class="col-12 md:col-4 mb-4 px-5">
+      <span
+        class="p-3 shadow-2 mb-3 inline-block surface-card"
+        style="border-radius: 10px"
+      >
+        <i class="pi pi-check-circle text-4xl text-blue-500"></i>
+      </span>
+      <div class="text-900 mb-3 font-medium">Easy to Use</div>
+      <span class="text-700 text-sm line-height-3"
+        >Ornare suspendisse sed nisi lacus sed viverra tellus. Neque volutpat ac
+        tincidunt vitae semper.</span
+      >
+    </div>
+    <div class="col-12 md:col-4 mb-4 px-5">
+      <span
+        class="p-3 shadow-2 mb-3 inline-block surface-card"
+        style="border-radius: 10px"
+      >
+        <i class="pi pi-globe text-4xl text-blue-500"></i>
+      </span>
+      <div class="text-900 mb-3 font-medium">Fast & Global Support</div>
+      <span class="text-700 text-sm line-height-3"
+        >Fermentum et sollicitudin ac orci phasellus egestas tellus rutrum
+        tellus.</span
+      >
+    </div>
+    <div class="col-12 md:col-4 mb-4 px-5">
+      <span
+        class="p-3 shadow-2 mb-3 inline-block surface-card"
+        style="border-radius: 10px"
+      >
+        <i class="pi pi-github text-4xl text-blue-500"></i>
+      </span>
+      <div class="text-900 mb-3 font-medium">Open Source</div>
+      <span class="text-700 text-sm line-height-3"
+        >Nec tincidunt praesent semper feugiat. Sed adipiscing diam donec
+        adipiscing tristique risus nec feugiat.
+      </span>
+    </div>
+    <div class="col-12 md:col-4 md:mb-4 mb-0 px-3">
+      <span
+        class="p-3 shadow-2 mb-3 inline-block surface-card"
+        style="border-radius: 10px"
+      >
+        <i class="pi pi-shield text-4xl text-blue-500"></i>
+      </span>
+      <div class="text-900 mb-3 font-medium">Trusted Securitty</div>
+      <span class="text-700 text-sm line-height-3"
+        >Mattis rhoncus urna neque viverra justo nec ultrices. Id cursus metus
+        aliquam eleifend.</span
+      >
+    </div>
+  </div>
+</div>
 <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
