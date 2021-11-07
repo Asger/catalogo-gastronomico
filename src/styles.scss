@@ -41,7 +41,7 @@ $color-principal: #ff8800;
 }
 @media (min-width: 1400px) {
   .container {
-    max-width: 1320px;
+    max-width: 1380px;
   }
 }
 /* --------------------- */
@@ -84,6 +84,9 @@ p-menubarsub {
 .p-galleria-thumbnail-container {
   height: 130px;
 }
+.p-galleria .p-galleria-caption {
+  background: rgba(0, 0, 0, 0.75);
+}
 .p-galleria-thumbnails-bottom {
   height: 100%;
 }
@@ -94,5 +97,13 @@ p-menubarsub {
   }
   .p-galleria-item-wrapper {
     height: 100%;
+  }
+}
+/* Carrusel de los platos principales */
+
+@media (max-width: 765px) {
+  .p-carousel .p-carousel-content .p-carousel-prev,
+  .p-carousel .p-carousel-content .p-carousel-next {
+    display: none;
   }
 }

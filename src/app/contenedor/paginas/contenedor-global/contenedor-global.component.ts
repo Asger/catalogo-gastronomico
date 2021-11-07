@@ -18,16 +18,20 @@ export class ContenedorGlobalComponent implements OnInit {
         routerLink: 'inicio'
       },
       {
-        label: 'Nosotros',
-        icon: 'fas fa-users',
-      },
-      {
-        label: 'Menú',
+        label: 'Nuestra carta',
         icon: 'fas fa-clipboard',
       },
       {
         label: 'Blog',
-        icon: 'pi pi-fw pi-pencil',
+        icon: 'fas fa-pen',
+      },
+      {
+        label: 'Fotos',
+        icon: 'fas fa-image',
+      },
+      {
+        label: 'Sobre nosotros',
+        icon: 'fas fa-users',
       },
       {
         label: 'Contacto',

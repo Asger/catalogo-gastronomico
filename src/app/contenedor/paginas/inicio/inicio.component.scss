@@ -1,14 +1,47 @@
-.info {
-  p {
-    padding-left: 10px;
-    border-left: 7px solid #ff8800;
+/* Hero del inicio */
+.info-general {
+  .info {
+    .lineas-efecto {
+      display: inline-block;
+      position: relative;
+      &::after,
+      &::before {
+        content: "";
+        position: absolute;
+        width: 20%;
+        height: 3px;
+        background-color: #ff8800;
+        top: 0.7em;
+      }
+      &::before {
+        left: 10px;
+      }
+      &::after {
+        right: 10px;
+      }
+    }
+    p {
+      padding-left: 10px;
+      border-left: 7px solid #ff8800;
+    }
   }
 }
-.banner {
-  object-fit: cover;
-  width: 100%;
-  height: 100%;
+.triangulo-equilatero-bottom-left {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 42%;
+  height: 0;
+  border-right: 100px solid transparent;
+  border-top: 50px solid transparent;
+  border-left: 100px solid #ff8800;
+  border-bottom: 20px solid #ff8800;
 }
+
+.efecto-cortado {
+  clip-path: polygon(8% 0, 100% 0%, 100% 100%, 0 100%);
+}
+
 .img-principal {
   width: 100%;
   object-fit: cover;
@@ -22,8 +55,101 @@
     height: 100%;
   }
 }
+
 @media (max-width: 765px) {
-  .img-principal{
+  .img-principal {
+    height: 400px;
+  }
+  .efecto-cortado {
+    clip-path: none;
+  }
+  .lineas-efecto {
+    &::after,
+    &::before {
+      display: none;
+    }
+  }
+  .triangulo-equilatero-bottom-left {
+    width: 100%;
+    border-right: 50px solid transparent;
+  }
+ 
+}
+
+.divisor {
+  text-align: center;
+  width: 50%;
+  border-color: #ff8800;
+}
+/* Platos principales */
+
+.recipe-card {
+  background: #fff;
+  width: 100%;
+  aside {
+    position: relative;
     height: 300px;
+    
+    img {
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+    }
+    .button {
+      background: #ff8800;
+      display: inline-block;
+      position: absolute;
+      top: 92%;
+      right: 3%;
+      width: em(65);
+      height: em(65);
+      border-radius: 5px;
+      line-height: em(65);
+      text-align: center;
+      padding: 1em;
+      text-decoration: none;
+      color: #000000;
+      font-weight: bold;
+    }
+  }
+  article {
+    padding: 1.25em 1.5em;
+    ul {
+      list-style: none;
+      margin: 0.5em 0 0;
+      padding: 0;
+      li {
+        display: inline-block;
+        margin-left: 1em;
+        line-height: 1em;
+        color: #000;
+        &:first-child {
+          margin-left: 0;
+        }
+      }
+    }
+    h2,
+    h3 {
+      margin: 0;
+      font-weight: 300;
+    }
+    h2 {
+      font-size: em(28);
+      color: #222222;
+    }
+    h3 {
+      font-size: em(15);
+      color: #838689;
+    }
+    p {
+      margin: 1.25em 0;
+      font-size: em(13);
+      font-weight: 400;
+      color: #222222;
+      span {
+        font-weight: 700;
+        color: #000000;
+      }
+    }
   }
 }

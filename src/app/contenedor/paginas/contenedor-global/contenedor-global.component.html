@@ -3,12 +3,18 @@
   styleClass="border-noround py-2 shadow-3"
   [autoDisplay]="true"
 >
-  <ng-template pTemplate="start">
-    <img
-      src="../../../../assets/logo.png"
-      height="50"
-      class="mr-2 hidden md:block"
-    />
+  <ng-template pTemplate="start" >
+    <div class="hidden md:block">
+      <div class="flex">
+        <img
+          src="../../../../assets/logo.png"
+          height="50"
+          class="mr-2 "
+        />
+        <a class="my-auto text-2xl ml-2 color-principal">Health & Food</a>
+      </div>
+    </div>
+ 
   </ng-template>
   <ng-template pTemplate="end">
     <input type="text" pInputText placeholder="Search" />
