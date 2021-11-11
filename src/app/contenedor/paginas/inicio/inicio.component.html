@@ -158,18 +158,21 @@
   </div>
 </div>
 <hr class="divisor mt-6 mb-7" />
-<div
-  class="
-    grid grid-nogutter
-    surface-section
-    text-800
-    container
-  "
->
-  <div class="col-12 md:col-6 text-center md:text-left flex align-items-center mb-5">
+<div class="grid grid-nogutter surface-section text-800 container">
+  <div
+    class="
+      col-12
+      md:col-6
+      text-center
+      md:text-left
+      flex
+      align-items-center
+      mb-5
+    "
+  >
     <section>
       <span class="block text-4xl md:text-7xl font-bold mb-3"
-        >Nuestros platillos principales</span
+        >Nuestros mejores platillos</span
       >
       <div
         class="text-xl md:text-3xl text-primary font-bold mb-5 color-principal"
@@ -182,43 +185,63 @@
         pButton
         pRipple
         label="Ver más"
-        type="button"
         class="p-button-outlined border-principal"
+        routerLink="/carta-menu/platillos-principales"
       ></button>
     </section>
   </div>
   <div class="col-12 md:col-6 overflow-hidden">
-    <p-carousel [value]="products" styleClass="custom-carousel" [showNavigators]="true" [numVisible]="1" [numScroll]="1" [circular]="true" [autoplayInterval]="3000" [responsiveOptions]="responsiveOptionsProducts">
+    <p-carousel
+      [value]="products"
+      styleClass="custom-carousel"
+      [showNavigators]="true"
+      [numVisible]="1"
+      [numScroll]="1"
+      [circular]="true"
+      [autoplayInterval]="5000"
+      [responsiveOptions]="responsiveOptionsProducts"
+    >
       <ng-template let-product pTemplate="item">
-          <div class="product-item">
-              <div class="product-item-content">
-                <div class="recipe-card border-round-bottom">
-                  <aside>
-                    <img
-                      [src]="product.url"
-                      alt="Chai Oatmeal"
-                    />
-            
-                    <a href="#" class="button">Leer en detalle</a>
-                  </aside>
-            
-                  <article>
-                    <h2> {{product.name}} </h2>
-                    <h3>Breakfast</h3>
-            
-                    <ul>
-                      <li><i class="fas fa-user mr-2 color-principal"></i><span>1</span></li>
-                      <li><i class="far fa-clock mr-2 color-principal"></i><span>15 min</span></li>
-                      <li><i class="fas fa-fire mr-2 color-principal"></i><span>248</span></li>
-                    </ul>
-            
-                    <p>
-                      {{product.descripcion}}
-                      lorem*3
-                    </p>
-                  </article>
-                </div>
-                <!-- 
+        <div class="product-item ">
+          <div class="product-item-content">
+            <div class="recipe-card border-round">
+              <aside>
+                <img [src]="product.url" alt="Chai Oatmeal" class="img-platillo" />
+
+                <a href="#" class="button">Leer en detalle</a>
+              </aside>
+
+              <article class="p-4">
+                <h2 class="text-3xl md:text-4xl">{{ product.name }}</h2>
+                <h3>Platillo principal</h3>
+                <ul>
+                  <li>
+                    <i class="fas fa-user mr-2 color-principal"></i
+                    ><span>1</span>
+                  </li>
+                  <li>
+                    <i class="far fa-clock mr-2 color-principal"></i
+                    ><span>15 min</span>
+                  </li>
+                </ul>
+
+                <p class="p-body">
+                  {{ product.descripcion }}
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam
+                  quibusdam sint cum earum vel vero voluptatem minima
+                  accusantium, et quasi corporis libero! Ipsam molestiae vero
+                  facere ullam perspiciatis dolores. Culpa? Veritatis sint
+                  labore blanditiis cumque, doloremque similique odio. Nobis
+                  minima sint rem, tenetur distinctio magni adipisci, laudantium
+                  nulla aliquid quos ut provident fugit iusto ducimus illum
+                  incidunt expedita, sequi consectetur! Expedita cumque libero
+                  eum suscipit. Ab corporis quos at atque perferendis nulla
+                  accusantium excepturi, quam quae minus magni ad, minima fugiat
+                  reiciendis nesciunt! Nisi ad, ipsa pariatur soluta quos eius.
+                </p>
+              </article>
+            </div>
+            <!-- 
                   <div class="p-mb-3">
                       <img [src]="product.url" [alt]="product.name" class="product-image img-principal" />
                   </div>
@@ -226,10 +249,10 @@
                       <h4 class="p-mb-1">{{product.name}}</h4>
                       <h6 class="p-mt-0 p-mb-3">${{product.price}}</h6>
                   </div> -->
-              </div>
           </div>
+        </div>
       </ng-template>
-  </p-carousel>
+    </p-carousel>
   </div>
 </div>
 

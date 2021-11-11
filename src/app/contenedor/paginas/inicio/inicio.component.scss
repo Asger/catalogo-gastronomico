@@ -73,7 +73,11 @@
     width: 100%;
     border-right: 50px solid transparent;
   }
- 
+  .recipe-card{
+    aside{
+      height: 250px !important;
+    }
+  }
 }
 
 .divisor {
@@ -84,13 +88,12 @@
 /* Platos principales */
 
 .recipe-card {
-  background: #fff;
   width: 100%;
+  border: 3px solid #ff8800;
   aside {
     position: relative;
     height: 300px;
-    
-    img {
+    .img-platillo {
       object-fit: cover;
       width: 100%;
       height: 100%;
@@ -113,7 +116,7 @@
     }
   }
   article {
-    padding: 1.25em 1.5em;
+    height: 240px;
     ul {
       list-style: none;
       margin: 0.5em 0 0;
@@ -122,7 +125,7 @@
         display: inline-block;
         margin-left: 1em;
         line-height: 1em;
-        color: #000;
+        color: rgb(255, 255, 255);
         &:first-child {
           margin-left: 0;
         }
@@ -135,21 +138,35 @@
     }
     h2 {
       font-size: em(28);
-      color: #222222;
+      color: #ffffff;
     }
     h3 {
       font-size: em(15);
-      color: #838689;
+      color: #c5c5c5;
     }
     p {
       margin: 1.25em 0;
       font-size: em(13);
       font-weight: 400;
-      color: #222222;
+      color: #ffffff;
       span {
         font-weight: 700;
-        color: #000000;
+        color: #ffffff;
       }
+    }
+    .p-body {
+      position: relative;
+      height: 75px;
+      overflow: hidden;
+    }
+    .p-body::before{
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 90%;
+      background: linear-gradient(transparent, rgb(15, 15, 15));
     }
   }
 }

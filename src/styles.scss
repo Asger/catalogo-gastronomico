@@ -16,7 +16,6 @@ $color-principal: #ff8800;
   border-color: $color-principal !important;
   color: $color-principal !important;
 }
-
 /* Container de boostrap */
 .container {
   padding-right: 15px;
@@ -54,7 +53,6 @@ p-menubarsub {
 }
 .p-menuitem-link {
   transition: all 0.3s ease-in-out !important;
-
   margin-right: 0.6em;
   font-size: 0.9em;
   &:hover {
@@ -107,3 +105,11 @@ p-menubarsub {
     display: none;
   }
 }
+
+/* Tabla dataview */
+.p-dataview-content, .p-dataview-header{
+  background-color: #121212 !important;
+}
+/* .bg-trasparente{
+  background-color: rgba(0, 0, 0, 0.85);
+} */

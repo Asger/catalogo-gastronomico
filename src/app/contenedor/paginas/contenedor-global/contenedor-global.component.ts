@@ -15,11 +15,66 @@ export class ContenedorGlobalComponent implements OnInit {
       {
         label: 'Home',
         icon: 'fas fa-home',
-        routerLink: 'inicio'
+        routerLink: 'inicio',
       },
       {
         label: 'Nuestra carta',
         icon: 'fas fa-clipboard',
+        items: [
+          {
+            label: 'Platillos',
+            icon: 'fas fa-utensils',
+            items: [
+              {
+                label: 'Principales',
+                icon: 'fas fa-drumstick-bite',
+                routerLink: 'carta-menu/platillos-principales',
+              },
+              {
+                label: 'Vegetarianos',
+                icon: 'fas fa-carrot',
+                routerLink: 'carta-menu/platillos-vegetarianos',
+              },
+              {
+                separator: true,
+              },
+              {
+                label: 'Todos',
+                icon: 'fas fa-asterisk',
+                routerLink: 'carta-menu/platillos',
+              },
+            ],
+          },
+          {
+            label: 'Bebidas',
+            icon: 'fas fa-glass-whiskey',
+            items: [
+              {
+                label: 'Sin alcohol',
+                icon: 'fa-lg fas fa-wine-glass',
+                routerLink: 'carta-menu/bebidas-sin-alcohol',
+              },
+              {
+                label: 'Con alcohol',
+                icon: 'fas fa-glass-martini-alt',
+                routerLink: 'carta-menu/bebidas-alcoholicas',
+              },
+              {
+                separator: true,
+              },
+              {
+                label: 'Todos',
+                icon: 'fas fa-asterisk',
+                routerLink: 'carta-menu/bebidas',
+              },
+            ],
+          },
+          {
+            label: 'Postres',
+            icon: 'fas fa-cheese',
+            routerLink: 'carta-menu/postres',
+          },
+        ],
       },
       {
         label: 'Blog',
