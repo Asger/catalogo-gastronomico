@@ -1,31 +1,49 @@
 /* Hero del inicio */
-.info-general {
-  .info {
-    .lineas-efecto {
-      display: inline-block;
-      position: relative;
-      &::after,
-      &::before {
-        content: "";
-        position: absolute;
-        width: 20%;
-        height: 3px;
-        background-color: #ff8800;
-        top: 0.7em;
+.fondo {
+  background: url(../../../../assets/hero-fondo.jpg) no-repeat center center
+    fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  .capa {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: linear-gradient(to bottom, #000000a1, #000000ab);
+  }
+  .info-general {
+    z-index: 2;
+    .info {
+      .lineas-efecto {
+        display: inline-block;
+        position: relative;
+        &::after,
+        &::before {
+          content: "";
+          position: absolute;
+          width: 20%;
+          height: 3px;
+          background-color: #ff8800;
+          top: 0.7em;
+        }
+        &::before {
+          left: 10px;
+        }
+        &::after {
+          right: 10px;
+        }
       }
-      &::before {
-        left: 10px;
+      p {
+        padding-left: 10px;
+        border-left: 7px solid #ff8800;
       }
-      &::after {
-        right: 10px;
-      }
-    }
-    p {
-      padding-left: 10px;
-      border-left: 7px solid #ff8800;
     }
   }
 }
+
 .triangulo-equilatero-bottom-left {
   position: absolute;
   bottom: 0;
@@ -73,8 +91,8 @@
     width: 100%;
     border-right: 50px solid transparent;
   }
-  .recipe-card{
-    aside{
+  .recipe-card {
+    aside {
       height: 250px !important;
     }
   }
@@ -156,17 +174,17 @@
     }
     .p-body {
       position: relative;
-      height: 75px;
+      height: 80px;
       overflow: hidden;
     }
-    .p-body::before{
-      content: '';
+    .p-body::before {
+      content: "";
       position: absolute;
       bottom: 0;
       left: 0;
       width: 100%;
-      height: 90%;
-      background: linear-gradient(transparent, rgb(15, 15, 15));
+      height: 95%;
+      background: linear-gradient(transparent, #121212);
     }
   }
 }

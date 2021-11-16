@@ -1,23 +1,101 @@
 <p-menubar
   [model]="items"
-  styleClass="border-noround py-2 shadow-3"
+  styleClass="border-noround py-3 shadow-3"
   [autoDisplay]="true"
 >
-  <ng-template pTemplate="start" >
+  <ng-template pTemplate="start">
     <div class="hidden md:block">
       <div class="flex">
-        <img
-          src="../../../../assets/logo.png"
-          height="50"
-          class="mr-2 "
-        />
+        <img src="../../../../assets/logo.png" height="65" class="mr-2" />
         <a class="my-auto text-2xl ml-2 color-principal">Health & Food</a>
       </div>
     </div>
- 
   </ng-template>
-<!--   <ng-template pTemplate="end">
-    <input type="text" pInputText placeholder="Search" />
-  </ng-template> -->
+  <ng-template pTemplate="end">
+    <div class="flex">
+      <div class="delimitador hidden lg:block mx-3"></div>
+      <div class="hidden lg:block">
+        <a
+          href=""
+          pButton
+          pRipple
+          icon="fa-lg fab fa-facebook text-2xl"
+          class="redes-sociales px-4 mr-2"
+        ></a>
+        <a
+          href=""
+          pButton
+          pRipple
+          icon="fa-lg fab fa-instagram text-2xl"
+          class="redes-sociales px-4 mr-2"
+        ></a>
+        <a
+          href=""
+          pButton
+          pRipple
+          icon="fa-lg fab fa-twitter text-2xl"
+          class="redes-sociales px-4 mr-2"
+        ></a>
+        <a
+          href=""
+          pButton
+          pRipple
+          icon="fa-lg fab fa-whatsapp text-2xl"
+          class="redes-sociales px-4"
+        ></a>
+      </div>
+
+      <div class="delimitador hidden lg:block mx-3"></div>
+      <button
+        pButton
+        pRipple
+        label="Admin"
+        (click)="visibleSidebar1 = true"
+        icon="fa-lg fas fa-user-cog"
+        class="p-button-outlined color-principal"
+      ></button>
+
+      <button
+        pButton
+        pRipple
+        type="button"
+        routerLink="login"
+        routerLinkActive="active"
+        label="Login"
+        icon="fa-lg fas fa-user-tie"
+        class="p-button-outlined color-principal"
+      ></button>
+    </div>
+  </ng-template>
 </p-menubar>
+<p-sidebar [(visible)]="visibleSidebar1" position="left" [baseZIndex]="10000">
+  <div class="text-center">
+    <img src="../../../../assets/logo.png" height="120" class="mr-2" />
+  </div>
+  <hr class="mt-4 hr-personalizado" />
+  <div class="text-center text-xl info-admin">
+    <span class="mt-2">neossuribe@gmail.com</span>
+    <span class="admin-status mt-2">
+      <i class="fa fa-circle mr-2"></i>
+      <span>En línea</span>
+    </span>
+  </div>
+  <div class="color-principal text-2xl mt-4 mb-2">Secciones</div>
+  <p-slideMenu
+    [model]="itemsPanel"
+    [viewportHeight]="200"
+    [menuWidth]="300"
+    styleClass="w-full"
+  ></p-slideMenu>
+  <div class="text-center mt-3">
+    <button
+      pButton
+      pRipple
+      label="Cerrar sesión"
+      icon="fa-lg fas fa-sign-out-alt"
+      iconPos="right"
+      class="p-button-outlined color-principal"
+    ></button>
+  </div>
+</p-sidebar>
 <router-outlet></router-outlet>

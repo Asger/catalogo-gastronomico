@@ -8,11 +8,13 @@ const routes: Routes = [
     children:[
       { path: 'inicio', loadChildren: () => import('./contenedor/paginas/inicio/inicio.module').then((m) => m.InicioModule) },
       { path: 'carta-menu', loadChildren: () => import('./contenedor/paginas/carta-menu/carta-menu.module').then(m => m.CartaMenuModule) },
+      { path: 'contacto', loadChildren: () => import('./contenedor/paginas/contacto/contacto.module').then(m => m.ContactoModule) },
+      { path: 'nosotros', loadChildren: () => import('./contenedor/paginas/nosotros/nosotros.module').then(m => m.NosotrosModule) },
+      { path: 'blog', loadChildren: () => import('./contenedor/paginas/blog/blog.module').then(m => m.BlogModule) },
+      { path: 'galeria', loadChildren: () => import('./contenedor/paginas/galeria/galeria.module').then(m => m.GaleriaModule) },
       { path: '', redirectTo: 'inicio', pathMatch: 'full' }
     ]
   },
-
-  
 ];
 
 @NgModule({

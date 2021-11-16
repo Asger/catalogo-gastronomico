@@ -7,7 +7,9 @@ import { MegaMenuItem, MenuItem } from 'primeng/api';
   styleUrls: ['./contenedor-global.component.scss'],
 })
 export class ContenedorGlobalComponent implements OnInit {
+  visibleSidebar1: any;
   items!: MenuItem[];
+  itemsPanel!: MenuItem[];
   constructor() {}
 
   ngOnInit(): void {
@@ -79,18 +81,74 @@ export class ContenedorGlobalComponent implements OnInit {
       {
         label: 'Blog',
         icon: 'fas fa-pen',
+        routerLink: 'blog',
       },
       {
-        label: 'Fotos',
+        label: 'Galería',
         icon: 'fas fa-image',
+        routerLink: 'galeria',
       },
       {
-        label: 'Sobre nosotros',
+        label: 'Nosotros',
         icon: 'fas fa-users',
+        routerLink: 'nosotros',
       },
       {
         label: 'Contacto',
         icon: 'fas fa-envelope',
+        routerLink: 'contacto',
+      },
+    ];
+    this.itemsPanel = [
+      {
+        label: 'Home',
+        routerLink: '',
+      },
+      {
+        label: 'Nuestra carta',
+        items: [
+          {
+            label: 'Platillos',
+            icon: 'fas fa-utensils',
+            items: [
+              {
+                label: 'Principales',
+                icon: 'fas fa-drumstick-bite',
+                routerLink: '',
+              },
+              {
+                label: 'Vegetarianos',
+                icon: 'fas fa-carrot',
+                routerLink: '',
+              },
+            ],
+          },
+          {
+            label: 'Bebidas',
+            icon: 'fas fa-glass-whiskey',
+            items: [
+              {
+                label: 'Sin alcohol',
+                icon: 'fa-lg fas fa-wine-glass',
+                routerLink: '',
+              },
+              {
+                label: 'Con alcohol',
+                icon: 'fas fa-glass-martini-alt',
+                routerLink: '',
+              },
+            ],
+          },
+          {
+            label: 'Postres',
+            icon: 'fas fa-cheese',
+            routerLink: '',
+          },
+        ],
+      },
+      {
+        label: 'Blog',
+        routerLink: '',
       },
     ];
   }

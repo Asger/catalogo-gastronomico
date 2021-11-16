@@ -43,9 +43,9 @@ $color-principal: #ff8800;
     max-width: 1380px;
   }
 }
-/* --------------------- */
+/* Menubar */
 .p-menubar {
-  background-color: rgba(0, 0, 0, 0.8) !important;
+  background-color: rgba(0, 0, 0, 0.85) !important;
   border: none !important;
 }
 p-menubarsub {
@@ -77,7 +77,27 @@ p-menubarsub {
     color: #000 !important;
   }
 }
-
+/* Sidebar */
+.p-sidebar {
+  background-color: rgba(0, 0, 0, 1) !important;
+  border-right: 3px solid #ff8800;
+  .p-menuitem-link {
+    transition: all 0.3s ease-in-out !important;
+    font-size: 1em;
+    &:hover {
+      background-color: $color-principal !important;
+      .p-menuitem-icon {
+        color: #000 !important;
+      }
+      .p-menuitem-text {
+        color: #000 !important;
+      }
+      .p-submenu-icon {
+        color: #000 !important;
+      }
+    }
+  }
+}
 /* Galeria del Inicio */
 .p-galleria-thumbnail-container {
   height: 130px;
@@ -107,9 +127,7 @@ p-menubarsub {
 }
 
 /* Tabla dataview */
-.p-dataview-content, .p-dataview-header{
+.p-dataview-content,
+.p-dataview-header {
   background-color: #121212 !important;
 }
-/* .bg-trasparente{
-  background-color: rgba(0, 0, 0, 0.85);
-} */

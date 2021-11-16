@@ -24,10 +24,12 @@ import { ScrollTopModule } from 'primeng/scrolltop';
 import { EditorModule } from 'primeng/editor';
 import { CalendarModule } from 'primeng/calendar';
 import { MegaMenuModule } from 'primeng/megamenu';
-import {CarouselModule} from 'primeng/carousel';
-import {DataViewModule} from 'primeng/dataview';
-import {RatingModule} from 'primeng/rating';
-import {RippleModule} from 'primeng/ripple';
+import { CarouselModule } from 'primeng/carousel';
+import { DataViewModule } from 'primeng/dataview';
+import { RatingModule } from 'primeng/rating';
+import { RippleModule } from 'primeng/ripple';
+import { PanelMenuModule } from 'primeng/panelmenu';
+import {SlideMenuModule} from 'primeng/slidemenu';
 
 @NgModule({
   exports: [
@@ -59,7 +61,9 @@ import {RippleModule} from 'primeng/ripple';
     CarouselModule,
     DataViewModule,
     RatingModule,
-    RippleModule
+    RippleModule,
+    PanelMenuModule,
+    SlideMenuModule
   ],
 })
 export class PrimengModule {}

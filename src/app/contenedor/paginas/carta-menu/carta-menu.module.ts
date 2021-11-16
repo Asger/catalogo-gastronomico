@@ -5,17 +5,16 @@ import { CartaMenuRoutingModule } from './carta-menu-routing.module';
 import { CartaMenuComponent } from './carta-menu.component';
 import { PrimengModule } from 'src/app/primeng-module';
 import { FormsModule } from '@angular/forms';
-
+import { HeroSeccionModule } from 'src/app/shared/components/hero-seccion/hero-seccion.module';
 
 @NgModule({
-  declarations: [
-    CartaMenuComponent
-  ],
+  declarations: [CartaMenuComponent],
   imports: [
     CommonModule,
     CartaMenuRoutingModule,
     PrimengModule,
-    FormsModule
-  ]
+    FormsModule,
+    HeroSeccionModule,
+  ],
 })
-export class CartaMenuModule { }
+export class CartaMenuModule {}
