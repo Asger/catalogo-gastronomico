@@ -1,1 +1,260 @@
-<app-hero-seccion [nombreSeccion]="'Sobre nosotros'" [descripcionSeccion]="'Nuestras metas, objetivos y visión'"></app-hero-seccion>
+<app-hero-seccion
+  [nombreSeccion]="'Sobre nosotros'"
+  [descripcionSeccion]="
+    'Un poco de nuestra historia y cuales son nuestros objetivos, valores, visión y equipo'
+  "
+></app-hero-seccion>
+
+<!-- Valores, visión, etc -->
+<div class="container mt-6">
+  <div class="grid text-center">
+    <div class="col-12 md:col-6 lg:col-4">
+      <div class="flip">
+        <div
+          class="front"
+          style="background-image: url(../../../../assets/hero-fondo.jpg)"
+        >
+          <div class="capa"></div>
+          <h1 class="text-shadow text-4xl md:text-5xl">Objetivos</h1>
+          <i class="fas fa-clipboard-list"></i>
+        </div>
+        <div class="back">
+          <h2>Objetivos</h2>
+          <p class="text-xl text-white">Nuestros objetivos son...</p>
+          <ul class="text-left text-xl">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 md:col-6 lg:col-4">
+      <div class="flip">
+        <div
+          class="front"
+          style="background-image: url(../../../../assets/hero-fondo.jpg)"
+        >
+          <div class="capa"></div>
+          <h1 class="text-shadow text-4xl md:text-5xl">Valores</h1>
+          <i class="fas fa-list-ul"></i>
+        </div>
+        <div class="back">
+          <h2>Valores</h2>
+          <p class="text-xl md:text-xl text-white">Nuestros valaros son...</p>
+          <ul class="text-left text-xl">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 md:col-6 lg:col-4">
+      <div class="flip">
+        <div
+          class="front"
+          style="background-image: url(../../../../assets/hero-fondo.jpg)"
+        >
+          <div class="capa"></div>
+          <h1 class="text-shadow text-4xl md:text-5xl">Visión</h1>
+          <i class="far fa-eye"></i>
+        </div>
+        <div class="back">
+          <h2>Visión</h2>
+          <p class="text-xl md:text-xl text-white">Nuestra visión es...</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <hr class="divisor mt-6 mb-7" />
+  <div class="grid grid-nogutter surface-section text-800 mt-4">
+    <div
+      class="col-12 md:col-6 text-center md:text-left flex align-items-center"
+    >
+      <section>
+        <span class="block text-5xl md:text-6xl font-bold mb-3 color-principal"
+          >Nuestro negocio comenzó ...</span
+        >
+        <p class="mt-0 mb-4 text-700 line-height-3 text-lg">
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsa quidem
+          reiciendis labore esse, tempora quasi quas quisquam nesciunt
+          voluptatem autem, quae cupiditate perferendis quod ad dolorem itaque,
+          velit porro repudiandae. Laborum, velit inventore quibusdam nesciunt
+          numquam quas iusto modi ipsum, odio tempore provident quisquam animi
+          reprehenderit doloribus alias repudiandae voluptatum beatae cumque
+          soluta, sequi ipsa accusantium assumenda fugit. Maxime, consequatur!
+          <br><br>
+          Quod nihil aliquam hic beatae, expedita sed voluptatum asperiores
+          tempora quo saepe, voluptate sit velit voluptas. Assumenda incidunt
+          quibusdam harum numquam voluptas! Impedit autem ipsam optio minima
+          consequatur cum nobis. Dolorum aliquam eaque ad voluptas quisquam
+          molestias nobis ab debitis optio ipsam, facere laboriosam eligendi
+          iste, esse dignissimos excepturi magnam voluptatem laudantium tempora
+          dolorem quis minima ipsa! Non, tempora quas!
+        </p>
+      </section>
+    </div>
+    <div class="col-12 md:col-6 overflow-hidden efecto-cortado">
+      <img
+        src="../../../../assets/logo.png"
+        alt="Image"
+        class="md:ml-auto block md:h-full img-responsive"
+      />
+    </div>
+  </div>
+  <hr class="divisor mt-6 mb-7" />
+  <h2 class="text-5xl md:text-6xl text color-principal text-center">Nuestro equipo</h2>
+  <div class="grid">
+    <div class="col-12 md:col-6 lg:col-3">
+      <div class="our-team border-round">
+        <div class="picture">
+          <img
+            class="img-fluid"
+            src="https://picsum.photos/130/130?image=1027"
+          />
+        </div>
+        <div class="team-content">
+          <h3 class="name text-3xl color-principal">Michele Miller</h3>
+          <h4 class="title">Administradora</h4>
+        </div>
+        <ul class="social">
+          <li>
+            <a
+              href="https://codepen.io/collection/XdWJOQ/"
+              class="fab fa-facebook"
+              aria-hidden="true"
+            ></a>
+          </li>
+          <li>
+            <a
+              href="https://codepen.io/collection/XdWJOQ/"
+              class="fab fa-twitter"
+              aria-hidden="true"
+            ></a>
+          </li>
+          <li>
+            <a
+              href="https://codepen.io/collection/XdWJOQ/"
+              class="fab fa-whatsapp"
+              aria-hidden="true"
+            ></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-12 md:col-6 lg:col-3">
+      <div class="our-team border-round">
+        <div class="picture">
+          <img
+            class="img-fluid"
+            src="https://picsum.photos/130/130?image=839"
+          />
+        </div>
+        <div class="team-content">
+          <h3 class="name text-3xl color-principal">Patricia Knott</h3>
+          <h4 class="title">Chef</h4>
+        </div>
+        <ul class="social">
+          <li>
+            <a
+              href="https://codepen.io/collection/XdWJOQ/"
+              class="fab fa-facebook"
+              aria-hidden="true"
+            ></a>
+          </li>
+          <li>
+            <a
+              href="https://codepen.io/collection/XdWJOQ/"
+              class="fab fa-twitter"
+              aria-hidden="true"
+            ></a>
+          </li>
+          <li>
+            <a
+              href="https://codepen.io/collection/XdWJOQ/"
+              class="fab fa-whatsapp"
+              aria-hidden="true"
+            ></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-12 md:col-6 lg:col-3">
+      <div class="our-team border-round">
+        <div class="picture">
+          <img
+            class="img-fluid"
+            src="https://picsum.photos/130/130?image=856"
+          />
+        </div>
+        <div class="team-content">
+          <h3 class="name text-3xl color-principal">Justin Ramos</h3>
+          <h4 class="title">Mesero</h4>
+        </div>
+        <ul class="social">
+          <li>
+            <a
+              href="https://codepen.io/collection/XdWJOQ/"
+              class="fab fa-facebook"
+              aria-hidden="true"
+            ></a>
+          </li>
+          <li>
+            <a
+              href="https://codepen.io/collection/XdWJOQ/"
+              class="fab fa-twitter"
+              aria-hidden="true"
+            ></a>
+          </li>
+          <li>
+            <a
+              href="https://codepen.io/collection/XdWJOQ/"
+              class="fab fa-whatsapp"
+              aria-hidden="true"
+            ></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-12 md:col-6 lg:col-3">
+      <div class="our-team border-round">
+        <div class="picture">
+          <img
+            class="img-fluid"
+            src="https://picsum.photos/130/130?image=836"
+          />
+        </div>
+        <div class="team-content">
+          <h3 class="name text-3xl color-principal">Mary Huntley</h3>
+          <h4 class="title">Ayudante de camarero</h4>
+        </div>
+        <ul class="social">
+          <li>
+            <a
+              href="https://codepen.io/collection/XdWJOQ/"
+              class="fab fa-facebook"
+              aria-hidden="true"
+            ></a>
+          </li>
+          <li>
+            <a
+              href="https://codepen.io/collection/XdWJOQ/"
+              class="fab fa-twitter"
+              aria-hidden="true"
+            ></a>
+          </li>
+          <li>
+            <a
+              href="https://codepen.io/collection/XdWJOQ/"
+              class="fab fa-whatsapp"
+              aria-hidden="true"
+            ></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
