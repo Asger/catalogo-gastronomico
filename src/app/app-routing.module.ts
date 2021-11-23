@@ -12,6 +12,7 @@ const routes: Routes = [
       { path: 'nosotros', loadChildren: () => import('./contenedor/paginas/nosotros/nosotros.module').then(m => m.NosotrosModule) },
       { path: 'blog', loadChildren: () => import('./contenedor/paginas/blog/blog.module').then(m => m.BlogModule) },
       { path: 'galeria', loadChildren: () => import('./contenedor/paginas/galeria/galeria.module').then(m => m.GaleriaModule) },
+      { path: 'login', loadChildren: () => import('./contenedor/auth/login/login.module').then(m => m.LoginModule) },
       { path: '', redirectTo: 'inicio', pathMatch: 'full' }
     ]
   },

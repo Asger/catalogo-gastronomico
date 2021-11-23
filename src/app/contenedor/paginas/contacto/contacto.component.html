@@ -1,1 +1,148 @@
-<app-hero-seccion [nombreSeccion]="'Contacto'" [descripcionSeccion]="'Nuestros medios de contacto y ubicación'"></app-hero-seccion>
+<app-hero-seccion
+  [nombreSeccion]="'Contacto'"
+  [descripcionSeccion]="'Nuestros medios de contacto y ubicación'"
+></app-hero-seccion>
+<div class="container mb-1">
+  <div class="grid">
+    <div class="col-12 md:col-6 lg:col-4">
+      <div class="wrapper p-2 mt-6">
+        <div class="card-contact text-center">
+          <div>
+            <i class="fa-lg fas fa-envelope"></i>
+          </div>
+          <div class="text-xl md:text-lg mt-3">E-MAIL</div>
+          <div class="text-xl mt-2 text-break">
+            restauranasdasdasdte@gmail.com
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 md:col-6 lg:col-4">
+      <div class="wrapper p-2 mt-6">
+        <div class="card-contact text-center">
+          <div>
+            <i class="fa-lg far fa-calendar"></i>
+            <i class="far fa-clock"></i>
+          </div>
+          <div class="text-xl md:text-lg mt-3">DIAS Y HS DE ATENCIÓN</div>
+          <div class="text-xl mt-2 text-break">
+            LUNES A SABADOS ( 9:00 A 20:00 )
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 md:col-6 lg:col-4">
+      <div class="wrapper p-2 mt-6">
+        <div class="card-contact text-center">
+          <div>
+            <i class="fa-lg fas fa-phone-alt"></i>
+          </div>
+          <div class="text-xl md:text-lg mt-3">TELÉFONO</div>
+          <div class="text-xl mt-2 text-break">+54 299 127 4512</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <hr class="divisor mt-6 mb-7" />
+  <div class="grid flex justify-content-center mt-4">
+    <div class="col-12">
+      <h2 class="text-4xl md:text-6xl text-center color-principal uppercase">
+        <i class="fas fa-map-marked-alt mr-4"></i>Ubicación
+      </h2>
+      <div class="text-center">
+        <img
+          src="../../../../assets/contacto/ubicacion.png"
+          alt="Ubicación: Urquiza 360, Cipolletti, Río Negro"
+          class="img-responsive"
+        />
+      </div>
+    </div>
+  </div>
+  <hr class="divisor mt-6 mb-7" />
+  <div class="grid">
+    <div class="col-12">
+      <h2 class="text-4xl md:text-6xl text-center color-principal uppercase">
+        Contactanos directamente
+      </h2>
+    </div>
+    <div class="col-12">
+      <!-- action="https://formsubmit.co/contacto@camaraicc.com" method="POST" -->
+      <form>
+        <div class="grid fondo-color p-3 border-round">
+          <div class="col-12">
+            <div class="grid">
+              <div class="col-12 md:col-4">
+                <div class="p-inputgroup input-style">
+                  <span class="p-inputgroup-addon"
+                    ><i class="pi pi-user color-principal"></i
+                  ></span>
+                  <input
+                    type="text"
+                    name="Nombre"
+                    pInputText
+                    placeholder="Nombre"
+                    required
+                  />
+                </div>
+              </div>
+              <div class="col-12 md:col-4">
+                <div class="p-inputgroup input-style">
+                  <span class="p-inputgroup-addon"
+                    ><i class="fas fa-at color-principal"></i
+                  ></span>
+                  <input
+                    type="email"
+                    name="Email"
+                    pInputText
+                    placeholder="E-mail"
+                    required
+                  />
+                </div>
+              </div>
+              <div class="col-12 md:col-4">
+                <div class="p-inputgroup input-style">
+                  <span class="p-inputgroup-addon"
+                    ><i class="fas fa-phone-alt color-principal"></i
+                  ></span>
+                  <input
+                    type="number"
+                    name="Teléfono"
+                    pInputText
+                    placeholder="Teléfono"
+                    required
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-12">
+            <span class="p-float-label input-style">
+              <textarea
+                rows="6"
+                pInputTextarea
+                [autoResize]="true"
+                name="Mensaje"
+                placeholder="Mensaje..."
+                class="w-full"
+                required
+              ></textarea>
+            </span>
+          </div>
+
+          <div class="col-12 flex justify-content-center">
+            <button
+              pButton
+              pRipple
+              type="submit"
+              label="Enviar"
+              class="p-button-outlined border-principal p-button-lg mt-1"
+              icon="fas fa-paper-plane"
+            ></button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<app-footer></app-footer>

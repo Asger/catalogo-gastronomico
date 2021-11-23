@@ -5,6 +5,8 @@ import { GaleriaRoutingModule } from './galeria-routing.module';
 import { GaleriaComponent } from './galeria.component';
 
 import { HeroSeccionModule } from 'src/app/shared/components/hero-seccion/hero-seccion.module';
+import { PrimengModule } from 'src/app/primeng-module';
+import { FooterModule } from 'src/app/shared/components/footer/footer.module';
 
 @NgModule({
   declarations: [
@@ -13,7 +15,9 @@ import { HeroSeccionModule } from 'src/app/shared/components/hero-seccion/hero-s
   imports: [
     CommonModule,
     GaleriaRoutingModule,
-    HeroSeccionModule
+    HeroSeccionModule,
+    PrimengModule,
+    FooterModule
   ]
 })
 export class GaleriaModule { }

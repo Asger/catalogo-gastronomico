@@ -6,6 +6,7 @@ import { NosotrosComponent } from './nosotros.component';
 
 import { HeroSeccionModule } from 'src/app/shared/components/hero-seccion/hero-seccion.module';
 import { PrimengModule } from 'src/app/primeng-module';
+import { FooterModule } from 'src/app/shared/components/footer/footer.module';
 
 @NgModule({
   declarations: [NosotrosComponent],
@@ -14,6 +15,7 @@ import { PrimengModule } from 'src/app/primeng-module';
     NosotrosRoutingModule,
     HeroSeccionModule,
     PrimengModule,
+    FooterModule
   ],
 })
 export class NosotrosModule {}

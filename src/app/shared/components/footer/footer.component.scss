@@ -1,0 +1,32 @@
+footer {
+  width: 100%;
+  border-top: 3px solid #ff8800;
+  background-color: #0e0e0e;
+  min-height: 250px;
+  padding: 10px 0px 25px 0px;
+  p {
+    font-size: 13px;
+    color: #ccc;
+    padding-bottom: 0px;
+    margin-bottom: 8px;
+  }
+  .footer_ul_amrc {
+    margin: 0px;
+    list-style-type: none;
+    font-size: 14px;
+    padding: 0px 0px 10px 0px;
+    li {
+      padding: 0px 0px 5px 0px;
+    }
+  }
+  .img-footer {
+    width: 70%;
+    height: 70%;
+  }
+
+  .divisor {
+    text-align: center;
+    width: 50%;
+    border-color: #ff8800;
+  }
+}

@@ -4,8 +4,16 @@
 @import "~@fortawesome/fontawesome-free/scss/regular.scss";
 @import "~@fortawesome/fontawesome-free/scss/brands.scss";
 
+@font-face {
+  font-family: GOTHIC;
+  src: url("./assets/tipografia/GOTHIC.TTF");
+}
 body {
   margin: 0 !important;
+  font-family: GOTHIC !important;
+}
+a, button{
+  font-family: GOTHIC !important;
 }
 
 $color-principal: #ff8800;
@@ -16,7 +24,7 @@ $color-principal: #ff8800;
   border-color: $color-principal !important;
   color: $color-principal !important;
 }
-.border-naranja{
+.border-naranja {
   border: 2px solid #ff8800;
 }
 /* Container de boostrap */
@@ -119,6 +127,9 @@ p-menubarsub {
   .p-galleria-item-wrapper {
     height: 100%;
   }
+}
+.p-galleria-close-icon {
+  z-index: 2;
 }
 /* Carrusel de los platos principales */
 

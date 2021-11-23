@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { InicioRoutingModule } from './inicio-routing.module';
 import { InicioComponent } from './inicio.component';
 import { PrimengModule } from 'src/app/primeng-module';
+import { FooterModule } from 'src/app/shared/components/footer/footer.module';
 
 
 @NgModule({
@@ -13,7 +14,8 @@ import { PrimengModule } from 'src/app/primeng-module';
   imports: [
     CommonModule,
     InicioRoutingModule,
-    PrimengModule
+    PrimengModule,
+    FooterModule
   ]
 })
 export class InicioModule { }

@@ -1,0 +1,85 @@
+.wrapper {
+  position: relative;
+  perspective: 40em;
+  display: grid;
+  transform-style: preserve-3d;
+  .card-contact {
+    grid-area: 1 / 1;
+    height: 200px;
+    width: 100%;
+    transform: translateX(10px) rotateY(25deg) rotateX(10deg);
+    background: #ff8800;
+    padding: 30px;
+    color: #000;
+    font-size: 60px;
+    backface-visibility: hidden;
+    box-shadow: 0 10px 30px -3px rgba(0, 0, 0, 0.1);
+    .text-break {
+      word-break: break-all;
+    }
+  }
+  &:before {
+    --bw: 9px;
+    grid-area: 1 / 1;
+    content: "";
+    backface-visibility: hidden;
+    height: 100%;
+    width: 100%;
+    margin-top: calc(-1 * var(--bw));
+    margin-left: calc(-1 * var(--bw));
+    background: transparent;
+    transform: translateX(-60px) rotateY(-30deg) rotateX(15deg) scale(1.03);
+    pointer-events: none;
+    border: var(--bw) solid rgb(29, 29, 29);
+    box-sizing: content-box;
+  }
+  &:hover > div,
+  &:hover:before {
+    transform: none;
+  }
+
+  & > div,
+  &:before {
+    will-change: transform;
+    transition: 0.3s transform cubic-bezier(0.25, 0.46, 0.45, 1);
+  }
+}
+.divisor {
+  text-align: center;
+  width: 50%;
+  border-color: #ff8800;
+}
+.img-responsive {
+  width: 65%;
+  border: 9px solid #ff8800;
+}
+@media screen and (max-width: 760px) {
+  .img-responsive {
+    width: 100%;
+  }
+}
+
+/* Formulario de contacto */
+.input-style {
+  input {
+    width: 100%;
+    border-color: transparent;
+    box-shadow: none;
+  }
+  span {
+    border-color: transparent;
+    border-left: 5px solid #ff8800;
+    box-shadow: none;
+    i {
+      font-size: 1.4em;
+    }
+  }
+  textarea {
+    border-width: 2px;
+    padding: 1.2em;
+    width: 100%;
+    border-color: #ff8800;
+    font-size: 1.1em;
+    box-shadow: none;
+  }
+}

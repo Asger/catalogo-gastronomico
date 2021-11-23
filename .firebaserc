@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "web-gastronomica-catalogo": {
+      "hosting": {
+        "catalogoGastronomia": [
+          "web-gastronomica-catalogo"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "web-gastronomica-catalogo"
+  }
+}

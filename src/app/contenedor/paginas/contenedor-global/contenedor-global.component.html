@@ -46,25 +46,28 @@
       </div>
 
       <div class="delimitador hidden lg:block mx-3"></div>
-      <button
-        pButton
-        pRipple
-        label="Admin"
-        (click)="visibleSidebar1 = true"
-        icon="fa-lg fas fa-user-cog"
-        class="p-button-outlined color-principal"
-      ></button>
-
-<!--       <button
-        pButton
-        pRipple
-        type="button"
-        routerLink="login"
-        routerLinkActive="active"
-        label="Login"
-        icon="fa-lg fas fa-user-tie"
-        class="p-button-outlined color-principal"
-      ></button> -->
+      <div *ngIf="userData$ | async as userData; else login">
+        <button
+          pButton
+          pRipple
+          label="Admin"
+          (click)="visibleSidebar1 = true"
+          icon="fa-lg fas fa-user-cog"
+          class="p-button-outlined color-principal"
+        ></button>
+      </div>
+      <ng-template #login>
+        <button
+          pButton
+          pRipple
+          type="button"
+          routerLink="login"
+          routerLinkActive="active"
+          label="Login"
+          icon="fa-lg fas fa-user-tie"
+          class="p-button-outlined color-principal"
+        ></button>
+      </ng-template>
     </div>
   </ng-template>
 </p-menubar>
@@ -95,6 +98,7 @@
       icon="fa-lg fas fa-sign-out-alt"
       iconPos="right"
       class="p-button-outlined color-principal"
+      (click)="onLogout()"
     ></button>
   </div>
 </p-sidebar>

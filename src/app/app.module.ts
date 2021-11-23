@@ -4,21 +4,20 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { ContenedorGlobalComponent } from './contenedor/paginas/contenedor-global/contenedor-global.component';
 import { PrimengModule } from './primeng-module';
-import { ContenedorGlobalComponent } from './contenedor/paginas/contenedor-global/contenedor-global.component'; 
+import { FirebaseModule } from './firebase-module';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    ContenedorGlobalComponent
-  ],
+  declarations: [AppComponent, ContenedorGlobalComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
-    PrimengModule
+    PrimengModule,
+    FirebaseModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

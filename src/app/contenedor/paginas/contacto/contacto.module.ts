@@ -5,6 +5,8 @@ import { ContactoRoutingModule } from './contacto-routing.module';
 import { ContactoComponent } from './contacto.component';
 
 import { HeroSeccionModule } from 'src/app/shared/components/hero-seccion/hero-seccion.module';
+import { PrimengModule } from 'src/app/primeng-module';
+import { FooterModule } from 'src/app/shared/components/footer/footer.module';
 
 @NgModule({
   declarations: [
@@ -13,7 +15,9 @@ import { HeroSeccionModule } from 'src/app/shared/components/hero-seccion/hero-s
   imports: [
     CommonModule,
     ContactoRoutingModule,
-    HeroSeccionModule
+    HeroSeccionModule,
+    PrimengModule,
+    FooterModule
   ]
 })
 export class ContactoModule { }

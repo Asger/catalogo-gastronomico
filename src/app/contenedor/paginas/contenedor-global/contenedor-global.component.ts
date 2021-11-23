@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { MegaMenuItem, MenuItem } from 'primeng/api';
+import { MenuItem } from 'primeng/api';
+import { Observable } from 'rxjs';
+import { AuthService } from '../../auth/auth.service';
 
 @Component({
   selector: 'app-contenedor-global',
@@ -10,7 +12,9 @@ export class ContenedorGlobalComponent implements OnInit {
   visibleSidebar1: any;
   items!: MenuItem[];
   itemsPanel!: MenuItem[];
-  constructor() {}
+
+  public userData$: Observable<any> = this.authSvc.userData$;
+  constructor(public authSvc: AuthService) {}
 
   ngOnInit(): void {
     this.items = [
@@ -151,5 +155,10 @@ export class ContenedorGlobalComponent implements OnInit {
         routerLink: '',
       },
     ];
+  }
+
+  onLogout() {
+    this.visibleSidebar1 = false;
+    this.authSvc.logout();
   }
 }

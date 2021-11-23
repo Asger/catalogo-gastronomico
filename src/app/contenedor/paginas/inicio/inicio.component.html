@@ -202,13 +202,19 @@
       [responsiveOptions]="responsiveOptionsProducts"
     >
       <ng-template let-product pTemplate="item">
-        <div class="product-item ">
+        <div class="product-item">
           <div class="product-item-content">
             <div class="recipe-card border-round">
               <aside>
-                <img [src]="product.url" alt="Chai Oatmeal" class="img-platillo" />
+                <img
+                  [src]="product.url"
+                  alt="Chai Oatmeal"
+                  class="img-platillo"
+                />
 
-                <a href="#" class="button">Leer en detalle<i class="fas fa-arrow-right ml-2"></i></a>
+                <a href="#" class="button"
+                  >Leer en detalle<i class="fas fa-arrow-right ml-2"></i
+                ></a>
               </aside>
 
               <article class="p-4">
@@ -395,3 +401,5 @@
     </div>
   </div>
 </div>
+
+<app-footer></app-footer>

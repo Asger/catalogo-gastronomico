@@ -5,15 +5,17 @@ import { BlogRoutingModule } from './blog-routing.module';
 import { BlogComponent } from './blog.component';
 
 import { HeroSeccionModule } from 'src/app/shared/components/hero-seccion/hero-seccion.module';
+import { PrimengModule } from 'src/app/primeng-module';
+import { FooterModule } from 'src/app/shared/components/footer/footer.module';
 
 @NgModule({
-  declarations: [
-    BlogComponent
-  ],
+  declarations: [BlogComponent],
   imports: [
     CommonModule,
     BlogRoutingModule,
-    HeroSeccionModule
-  ]
+    HeroSeccionModule,
+    PrimengModule,
+    FooterModule,
+  ],
 })
-export class BlogModule { }
+export class BlogModule {}

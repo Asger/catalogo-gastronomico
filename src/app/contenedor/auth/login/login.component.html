@@ -1,0 +1,113 @@
+<div class="fondo">
+  <div class="capa"></div>
+  <div class="container h-screen flex">
+    <div class="grid grid-nogutter my-auto w-full">
+      <div class="col-12 md:col-6 z-1 hidden md:block">
+        <img
+          class="img-responsive"
+          src="../../../../assets/login/loginForm.jpg"
+          alt="Es un foto del restaurante"
+        />
+      </div>
+      <div class="col-12 md:col-6 my-auto col-sobre z-2">
+        <div
+          class="
+            surface-card
+            px-4
+            py-5
+            shadow-2
+            border-round
+            w-full
+            mt-8
+            mb-4
+            md:mt-0
+          "
+        >
+          <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+            <div class="text-center mb-5">
+              <img
+                src="../../../../assets/logo.png"
+                alt="Image"
+                height="80"
+                class="mb-3"
+              />
+              <div class="text-900 text-6xl font-medium mb-3">Bienvenido</div>
+              <span
+                class="
+                  text-600 text-xl
+                  font-medium
+                  line-height-3
+                  color-principal
+                "
+                >Iniciar sesión</span
+              >
+            </div>
+
+            <div>
+              <label for="email1" class="block text-900 font-medium mb-2"
+                >Email</label
+              >
+              <input
+                id="email1"
+                type="email"
+                pInputText
+                class="w-full mb-3"
+                formControlName="email"
+                autofocus
+              />
+              <div
+                class="errores"
+                *ngIf="
+                  loginForm.get('email')?.errors &&
+                  loginForm.get('email')?.dirty
+                "
+              >
+                <p *ngIf="loginForm.get('email')?.hasError('required')">
+                  Debe completar este campo*
+                </p>
+                <p *ngIf="loginForm.get('email')?.hasError('pattern')">
+                  Asegúrese de haber colocado el @ y que este completo su email*
+                </p>
+              </div>
+
+              <label for="password1" class="block text-900 font-medium mb-2"
+                >Contraseña</label
+              >
+              <input
+                id="password1"
+                type="password"
+                pInputText
+                class="w-full mb-3"
+                formControlName="password"
+              />
+              <div
+                class="errores"
+                *ngIf="
+                  loginForm.get('password')?.errors &&
+                  loginForm.get('password')?.dirty
+                "
+              >
+                <p *ngIf="loginForm.get('password')?.hasError('required')">
+                  Debe completar este campo*
+                </p>
+                <p *ngIf="loginForm.get('password')?.hasError('minlength')">
+                  La contraseña no puede tener menos de 6 caracteres*
+                </p>
+              </div>
+              <p-toast position="bottom-right"></p-toast>
+              <button
+                pButton
+                pRipple
+                type="submit"
+                label="Aceptar"
+                icon="pi pi-user"
+                [disabled]="loginForm.invalid"
+                class="w-full p-button-outlined border-principal"
+              ></button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
