@@ -13,6 +13,7 @@ const routes: Routes = [
       { path: 'blog', loadChildren: () => import('./contenedor/paginas/blog/blog.module').then(m => m.BlogModule) },
       { path: 'galeria', loadChildren: () => import('./contenedor/paginas/galeria/galeria.module').then(m => m.GaleriaModule) },
       { path: 'login', loadChildren: () => import('./contenedor/auth/login/login.module').then(m => m.LoginModule) },
+      { path: 'admin', loadChildren: () => import('./contenedor/admin/admin.module').then(m => m.AdminModule) },
       { path: '', redirectTo: 'inicio', pathMatch: 'full' }
     ]
   },

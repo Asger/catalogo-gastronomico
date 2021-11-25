@@ -1,0 +1,246 @@
+<div class="container mt-tabla shadow-7 border-round p-4">
+  <p-toast position="bottom-center"></p-toast>
+  <form [formGroup]="productoForm">
+    <div class="grid">
+      <div class="col-12 md:col-4">
+        <label class="color-principal">Título</label>
+        <input
+          type="text"
+          pInputText
+          class="w-full mt-1"
+          formControlName="nombre"
+          [(ngModel)]="producto.nombre"
+        />
+        <div
+          class="errores"
+          *ngIf="
+            productoForm.get('nombre')?.errors &&
+            productoForm.get('nombre')?.dirty
+          "
+        >
+          <p *ngIf="productoForm.get('nombre')?.hasError('required')">
+            Debe completar este campo*
+          </p>
+        </div>
+      </div>
+      <div class="col-12 md:col-4">
+        <label class="color-principal">Categoría</label>
+        <select
+          class="w-full mt-1"
+          pInputText
+          style="appearance: auto"
+          formControlName="categoria"
+          [(ngModel)]="producto.categoria"
+        >
+          <option>Platillo principal</option>
+          <option>Platillo vegetariano</option>
+          <option>Bebida alcohólica</option>
+          <option>Bebida sin alcohol</option>
+          <option>Postre</option>
+        </select>
+        <div
+          class="errores"
+          *ngIf="
+            productoForm.get('categoria')?.errors &&
+            productoForm.get('categoria')?.dirty
+          "
+        >
+          <p *ngIf="productoForm.get('categoria')?.hasError('required')">
+            Debe completar este campo*
+          </p>
+        </div>
+      </div>
+      <div class="col-12 md:col-4">
+        <label class="color-principal">Precio</label>
+        <input
+          type="number"
+          pInputText
+          class="w-full mt-1"
+          formControlName="precio"
+          [(ngModel)]="producto.precio"
+        />
+        <div
+          class="errores"
+          *ngIf="
+            productoForm.get('precio')?.errors &&
+            productoForm.get('precio')?.dirty
+          "
+        >
+          <p *ngIf="productoForm.get('precio')?.hasError('required')">
+            Debe completar este campo*
+          </p>
+        </div>
+      </div>
+      <div class="col-12 md:col-4">
+        <label class="color-principal">Imagen</label>
+        <input
+          type="file"
+          pInputText
+          class="w-full mt-1"
+          formControlName="imagen"
+          (change)="tomarImagen($event)"
+        />
+        <div
+          class="errores"
+          *ngIf="
+            productoForm.get('imagen')?.errors &&
+            productoForm.get('imagen')?.dirty
+          "
+        >
+          <p *ngIf="productoForm.get('imagen')?.hasError('required')">
+            Debe completar este campo*
+          </p>
+        </div>
+      </div>
+      <div class="col-12 md:col-4">
+        <label class="color-principal">Relevancia</label>
+        <select
+          class="w-full mt-1"
+          pInputText
+          style="appearance: auto"
+          formControlName="relevancia"
+          [(ngModel)]="producto.relevancia"
+        >
+          <option [ngValue]="true">Relevante</option>
+          <option [ngValue]="false">No relevante</option>
+        </select>
+        <div
+          class="errores"
+          *ngIf="
+            productoForm.get('relevancia')?.errors &&
+            productoForm.get('relevancia')?.dirty
+          "
+        >
+          <p *ngIf="productoForm.get('relevancia')?.hasError('required')">
+            Debe completar este campo*
+          </p>
+        </div>
+      </div>
+      <div class="col-12 md:col-4">
+        <label class="color-principal">Seleccionar fecha</label>
+        <div class="mt-1">
+          <p-calendar
+            formControlName="horaCreacion"
+            [(ngModel)]="producto.horaCreacion"
+            [showButtonBar]="true"
+            [showIcon]="true"
+            dateFormat="dd/mm/yy"
+            inputId="buttonbar"
+          ></p-calendar>
+        </div>
+        <div
+          class="errores"
+          *ngIf="
+            productoForm.get('horaCreacion')?.errors &&
+            productoForm.get('horaCreacion')?.dirty
+          "
+        >
+          <p *ngIf="productoForm.get('horaCreacion')?.hasError('required')">
+            Debe completar este campo*
+          </p>
+        </div>
+      </div>
+      <div class="col-12">
+        <label class="color-principal">Descripción</label>
+        <p-editor
+          formControlName="contenido"
+          [(ngModel)]="producto.contenido"
+          [style]="{ height: '320px' }"
+        >
+          <p-header>
+            <span class="ql-formats">
+              <button class="ql-header" value="1" type="button"></button>
+              <button class="ql-header" value="2" type="button"></button>
+            </span>
+            <!--      <span class="ql-formats">
+                <select class="ql-size">
+                  <option value="small">small</option>
+                  <option selected></option>
+                  <option value="large">large</option>
+                  <option value="huge">huge</option>
+                </select>
+                  <select class="ql-font"  tabindex="-1">
+                  <option selected>Sans Serif</option>
+                  <option value="serif">Serif</option>
+                  <option value="monospace">Monospace</option>
+                </select>
+              </span> -->
+
+            <span class="ql-formats">
+              <button class="ql-bold" aria-label="Bold"></button>
+              <button class="ql-italic" aria-label="Italic"></button>
+              <button class="ql-underline" aria-label="Underline"></button>
+              <button class="ql-strike" aria-label="Strike"></button>
+            </span>
+
+            <span class="ql-formats">
+              <select
+                title="Text Color"
+                class="ql-color"
+                defaultValue="rgb(0, 0, 0)"
+              ></select>
+              <span class="ql-format-separator"></span>
+              <select
+                title="Background Color"
+                class="ql-background"
+                defaultValue="rgb(255, 255, 255)"
+              ></select>
+            </span>
+            <span class="ql-formats">
+              <button class="ql-script" value="sub" type="button"></button>
+              <button class="ql-script" value="super" type="button"></button>
+            </span>
+            <span class="ql-formats">
+              <button class="ql-list" value="ordered"></button>
+              <button class="ql-list" value="bullet"></button>
+              <button class="ql-indent" value="-1" type="button"></button>
+              <button class="ql-indent" value="+1" type="button"></button>
+
+              <select title="Text Alignment" class="ql-align">
+                <option selected>Gauche</option>
+                <option value="center" label="Center"></option>
+                <option value="right" label="Right"></option>
+                <option value="justify" label="Justify"></option>
+              </select>
+            </span>
+            <span class="ql-formats">
+              <button aria-label="Link" class="ql-link"></button>
+              <!-- <button aria-label="Image" class="ql-image"></button>
+                <button class="ql-video" type="button"></button> -->
+            </span>
+            <span class="ql-formats">
+              <button class="ql-clean" type="button"></button>
+            </span>
+          </p-header>
+        </p-editor>
+        <div
+          class="errores"
+          *ngIf="
+            productoForm.get('contenido')?.errors &&
+            productoForm.get('contenido')?.dirty
+          "
+        >
+          <p *ngIf="productoForm.get('contenido')?.hasError('required')">
+            Debe completar este campo*
+          </p>
+        </div>
+      </div>
+      <div class="col-12 flex justify-content-between">
+        <a pButton pRipple class="bg-cyan-400" href="javascript:history.back()"
+          >Volver a la tabla</a
+        >
+        <button
+          pButton
+          pRipple
+          type="submit"
+          label="Aceptar"
+          [disabled]="editar ? false : productoForm.invalid"
+          class="bg-principal"
+          (click)="
+            editar ? actualizarProducto() : agregarProducto(productoForm.value)
+          "
+        ></button>
+      </div>
+    </div>
+  </form>
+</div>

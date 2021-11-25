@@ -1,0 +1,88 @@
+<ng-container *ngIf="cargado; else loading">
+  <div class="container mt-tabla">
+    <p-toast position="bottom-center"></p-toast>
+    <p-toolbar styleClass="mt-5 mb-2">
+      <ng-template pTemplate="left">
+        <button
+          pButton
+          pRipple
+          label="Agregar un blog"
+          icon="pi pi-plus"
+          class="p-button-info mr-2"
+          routerLink="/admin/nueva-noticia"
+        ></button>
+      </ng-template>
+    </p-toolbar>
+    <p-table
+      #dt
+      [value]="blogs"
+      [rows]="5"
+      [paginator]="true"
+      [globalFilterFields]="['titulo', 'categoria']"
+      [rowHover]="true"
+      dataKey="id"
+      currentPageReportTemplate="Mostrando {first} a {last}, de {totalRecords} blogs"
+      [showCurrentPageReport]="true"
+    >
+      <ng-template pTemplate="caption">
+        <div class="flex justify-content-between">
+          <h3 class="m-0 hidden md:flex pt-2">Gestión de Blogs</h3>
+          <span class="p-input-icon-left">
+            <i class="pi pi-search"></i>
+            <input
+              pInputText
+              type="text"
+              (input)="dt.filterGlobal($any($event.target).value, 'contains')"
+              placeholder="Buscar..."
+            />
+          </span>
+        </div>
+      </ng-template>
+      <ng-template pTemplate="header">
+        <tr>
+          <th pSortableColumn="titulo">
+            Título <p-sortIcon field="titulo"></p-sortIcon>
+          </th>
+          <th>Imagen</th>
+          <th pSortableColumn="categoria">
+            Categoría <p-sortIcon field="categoria"></p-sortIcon>
+          </th>
+          <th></th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-blog>
+        <tr>
+          <td>{{ blog.titulo }}</td>
+          <td>
+            <img [src]="blog.imagen" [alt]="blog.titulo" />
+          </td>
+          <td>{{ blog.categoria }}</td>
+          <td>
+            <button
+              pButton
+              pRipple
+              icon="pi pi-pencil"
+              class="p-button-rounded p-button-info mr-3"
+              [routerLink]="['/admin/editar-noticia', blog.id]"
+            ></button>
+            <button
+              pButton
+              pRipple
+              icon="pi pi-trash"
+              class="p-button-rounded p-button-danger"
+              (click)="deleteBlog(blog)"
+            ></button>
+          </td>
+        </tr>
+      </ng-template>
+    </p-table>
+    <p-confirmDialog [style]="{ width: '650px' }"></p-confirmDialog>
+  </div>
+</ng-container>
+
+<ng-template #loading>
+  <p-progressSpinner
+    class="flex justify-content-center my-5"
+    strokeWidth="4"
+  ></p-progressSpinner>
+</ng-template>

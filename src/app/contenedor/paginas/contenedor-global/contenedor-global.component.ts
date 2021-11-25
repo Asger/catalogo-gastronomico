@@ -19,7 +19,7 @@ export class ContenedorGlobalComponent implements OnInit {
   ngOnInit(): void {
     this.items = [
       {
-        label: 'Home',
+        label: 'Inicio',
         icon: 'fas fa-home',
         routerLink: 'inicio',
       },
@@ -69,7 +69,7 @@ export class ContenedorGlobalComponent implements OnInit {
                 separator: true,
               },
               {
-                label: 'Todos',
+                label: 'Todas',
                 icon: 'fas fa-asterisk',
                 routerLink: 'carta-menu/bebidas',
               },
@@ -105,58 +105,52 @@ export class ContenedorGlobalComponent implements OnInit {
     ];
     this.itemsPanel = [
       {
-        label: 'Home',
-        routerLink: '',
+        label: 'Inicio',
+        icon: 'fas fa-home',
+        routerLink: 'admin/tabla-inicio',
+        command: () => this.ocultarSidebar(),
       },
       {
         label: 'Nuestra carta',
+        icon: 'fas fa-clipboard',
         items: [
           {
             label: 'Platillos',
             icon: 'fas fa-utensils',
-            items: [
-              {
-                label: 'Principales',
-                icon: 'fas fa-drumstick-bite',
-                routerLink: '',
-              },
-              {
-                label: 'Vegetarianos',
-                icon: 'fas fa-carrot',
-                routerLink: '',
-              },
-            ],
+            routerLink: 'admin/tabla-platillos',
+            command: () => this.ocultarSidebar(),
           },
           {
             label: 'Bebidas',
             icon: 'fas fa-glass-whiskey',
-            items: [
-              {
-                label: 'Sin alcohol',
-                icon: 'fa-lg fas fa-wine-glass',
-                routerLink: '',
-              },
-              {
-                label: 'Con alcohol',
-                icon: 'fas fa-glass-martini-alt',
-                routerLink: '',
-              },
-            ],
+            routerLink: 'admin/tabla-bebidas',
+            command: () => this.ocultarSidebar(),
           },
           {
             label: 'Postres',
             icon: 'fas fa-cheese',
-            routerLink: '',
+            routerLink: 'admin/tabla-postres',
+            command: () => this.ocultarSidebar(),
           },
         ],
       },
       {
         label: 'Blog',
-        routerLink: '',
+        icon: 'fas fa-pen',
+        routerLink: 'admin/tabla-blog',
+        command: () => this.ocultarSidebar(),
+      },
+      {
+        label: 'Galería',
+        icon: 'fas fa-image',
+        routerLink: 'admin/tabla-fotos',
+        command: () => this.ocultarSidebar(),
       },
     ];
   }
-
+  ocultarSidebar() {
+    this.visibleSidebar1 = false;
+  }
   onLogout() {
     this.visibleSidebar1 = false;
     this.authSvc.logout();

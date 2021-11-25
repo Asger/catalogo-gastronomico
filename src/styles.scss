@@ -12,7 +12,8 @@ body {
   margin: 0 !important;
   font-family: GOTHIC !important;
 }
-a, button{
+a,
+button {
   font-family: GOTHIC !important;
 }
 
@@ -23,6 +24,10 @@ $color-principal: #ff8800;
 .border-principal {
   border-color: $color-principal !important;
   color: $color-principal !important;
+}
+.bg-principal {
+  background-color: $color-principal !important;
+  color: #000 !important;
 }
 .border-naranja {
   border: 2px solid #ff8800;
@@ -65,7 +70,7 @@ p-menubarsub {
 .p-menuitem-link {
   transition: all 0.3s ease-in-out !important;
   margin-right: 0.6em;
-  font-size: 0.9em;
+  font-size: 1em;
   &:hover {
     background-color: $color-principal !important;
     .p-menuitem-icon {
@@ -109,6 +114,10 @@ p-menubarsub {
     }
   }
 }
+/* Slide Menú */
+.p-slidemenu-content {
+  height: 220px !important;
+}
 /* Galeria del Inicio */
 .p-galleria-thumbnail-container {
   height: 130px;
@@ -131,8 +140,8 @@ p-menubarsub {
 .p-galleria-close-icon {
   z-index: 2;
 }
-/* Carrusel de los platos principales */
 
+/* Carrusel de los platos principales */
 @media (max-width: 765px) {
   .p-carousel .p-carousel-content .p-carousel-prev,
   .p-carousel .p-carousel-content .p-carousel-next {
@@ -144,4 +153,16 @@ p-menubarsub {
 .p-dataview-content,
 .p-dataview-header {
   background-color: #121212 !important;
+}
+
+/* Tablas crud */
+.mt-tabla {
+  margin-top: 9em;
+}
+
+.color-danger {
+  background-color: #dc3545 !important;
+}
+.p-calendar{
+  width: 100%;
 }

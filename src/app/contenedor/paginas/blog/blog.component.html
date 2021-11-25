@@ -1,3 +1,51 @@
-<app-hero-seccion [nombreSeccion]="'Nuestro blog'" [descripcionSeccion]="'En esta sección, publicamos novedades, eventos y avisos'"></app-hero-seccion>
+<app-hero-seccion
+  [nombreSeccion]="'Nuestro blog'"
+  [descripcionSeccion]="
+    'En esta sección, publicamos novedades, eventos y avisos'
+  "
+></app-hero-seccion>
+
+<div class="container my-4">
+  <div class="grid">
+    <div class="col-12">
+      <section class="dark">
+        <article class="postcard dark blue">
+          <div class="postcard__img_link">
+            <img
+              class="postcard__img"
+              src="https://picsum.photos/1000/1000"
+              alt="Image Title"
+            />
+          </div>
+          <div class="postcard__text">
+            <h1 class="postcard__title blue"><a>Podcast Title</a></h1>
+            <div class="postcard__subtitle small mt-3 mb-2">
+              <time>
+                <i class="fas fa-calendar-alt mr-2 color-principal"></i>Mon, May
+                25th 2020
+              </time>
+            </div>
+            <div class="postcard__bar"></div>
+            <div class="postcard__preview-txt">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi,
+              fugiat asperiores inventore beatae accusamus odit minima enim,
+              commodi quia, doloribus eius! Ducimus nemo accusantium maiores
+              velit corrupti tempora reiciendis molestiae repellat vero. Eveniet
+              ipsam adipisci illo iusto quibusdam, sunt neque nulla unde ipsum
+              dolores nobis enim quidem excepturi, illum quos! Lorem ipsum
+              dolor, sit amet consectetur adipisicing elit. Qui doloribus
+              ducimus quia accusamus deserunt consectetur aut reiciendis
+              aspernatur necessitatibus molestias cupiditate exercitationem
+              fugit, optio accusantium veniam illo est eligendi minima?
+            </div>
+            <ul class="postcard__tagbox">
+              <li class="tag__item">Novedad</li>
+            </ul>
+          </div>
+        </article>
+      </section>
+    </div>
+  </div>
+</div>
 
 <app-footer></app-footer>

@@ -1,0 +1,19 @@
+a {
+  text-decoration: none;
+}
+// Validación (color del campo)
+input.ng-invalid.ng-touched {
+  border: 2px solid red;
+}
+select.ng-invalid.ng-touched {
+  border: 2px solid red;
+}
+input.ng-valid.ng-touched {
+  border: 2px solid rgb(0, 255, 0);
+}
+select.ng-valid.ng-touched {
+  border: 2px solid rgb(0, 255, 0);
+}
+.errores {
+  color: red;
+}
