@@ -94,7 +94,6 @@ export class BlogService {
       horaCreacion: blog.horaCreacion,
       categoria: blog.categoria,
     };
-
     if (blog.id) {
       try {
         await this.blogsColeccion.doc(blog.id).update(blogObj);

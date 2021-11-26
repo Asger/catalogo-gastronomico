@@ -122,8 +122,11 @@
           <p-calendar
             formControlName="horaCreacion"
             [(ngModel)]="producto.horaCreacion"
+            [(ngModel)]="fecha"
             [showButtonBar]="true"
             [showIcon]="true"
+            [showTime]="true"
+            [showSeconds]="true"
             dateFormat="dd/mm/yy"
             inputId="buttonbar"
           ></p-calendar>

@@ -1,1 +1,113 @@
-<p>nueva-foto works!</p>
+<div class="container mt-tabla shadow-7 border-round p-4">
+  <p-toast position="bottom-center"></p-toast>
+  <form [formGroup]="fotoForm">
+    <div class="grid">
+      <div class="col-12 md:col-4">
+        <label class="color-principal">Título</label>
+        <input
+          type="text"
+          pInputText
+          class="w-full mt-1"
+          formControlName="titulo"
+          [(ngModel)]="foto.titulo"
+        />
+        <div
+          class="errores"
+          *ngIf="
+            fotoForm.get('titulo')?.errors && fotoForm.get('titulo')?.dirty
+          "
+        >
+          <p *ngIf="fotoForm.get('titulo')?.hasError('required')">
+            Debe completar este campo*
+          </p>
+        </div>
+      </div>
+      <div class="col-12 md:col-4">
+        <label class="color-principal">Categoría</label>
+        <select
+          class="w-full mt-1"
+          pInputText
+          style="appearance: auto"
+          formControlName="categoria"
+          [(ngModel)]="foto.categoria"
+        >
+          <option>Foto de nuestro restaurante</option>
+          <option>Foto de nuestro platillo más destacado</option>
+        </select>
+        <div
+          class="errores"
+          *ngIf="
+            fotoForm.get('categoria')?.errors &&
+            fotoForm.get('categoria')?.dirty
+          "
+        >
+          <p *ngIf="fotoForm.get('categoria')?.hasError('required')">
+            Debe completar este campo*
+          </p>
+        </div>
+      </div>
+      <div class="col-12 md:col-4">
+        <label class="color-principal">Imagen</label>
+        <input
+          type="file"
+          pInputText
+          class="w-full mt-1"
+          formControlName="imagen"
+          (change)="tomarImagen($event)"
+        />
+        <div
+          class="errores"
+          *ngIf="
+            fotoForm.get('imagen')?.errors && fotoForm.get('imagen')?.dirty
+          "
+        >
+          <p *ngIf="fotoForm.get('imagen')?.hasError('required')">
+            Debe completar este campo*
+          </p>
+        </div>
+      </div>
+      <div class="col-12 md:col-4">
+        <label class="color-principal">Seleccionar fecha</label>
+        <div class="mt-1">
+          <p-calendar
+            formControlName="horaCreacion"
+            [(ngModel)]="foto.horaCreacion"
+            [(ngModel)]="fecha"
+            [showButtonBar]="true"
+            [showIcon]="true"
+            [showTime]="true"
+            [showSeconds]="true"
+            dateFormat="dd/mm/yy"
+            inputId="buttonbar"
+          ></p-calendar>
+        </div>
+        <div
+          class="errores"
+          *ngIf="
+            fotoForm.get('horaCreacion')?.errors &&
+            fotoForm.get('horaCreacion')?.dirty
+          "
+        >
+          <p *ngIf="fotoForm.get('horaCreacion')?.hasError('required')">
+            Debe completar este campo*
+          </p>
+        </div>
+      </div>
+
+      <div class="col-12 flex justify-content-between">
+        <a pButton pRipple class="bg-cyan-400" href="javascript:history.back()"
+          >Volver a la tabla</a
+        >
+        <button
+          pButton
+          pRipple
+          type="submit"
+          label="Aceptar"
+          [disabled]="editar ? false : fotoForm.invalid"
+          class="bg-principal"
+          (click)="editar ? actualizarFoto() : agregarFoto(fotoForm.value)"
+        ></button>
+      </div>
+    </div>
+  </form>
+</div>

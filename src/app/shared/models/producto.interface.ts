@@ -1,3 +1,6 @@
+import firebase from 'firebase/compat/app';
+import Timestamp = firebase.firestore.Timestamp;
+
 export interface IProducto {
   id?: string;
   nombre?: string;
@@ -5,7 +8,7 @@ export interface IProducto {
   precio?: number;
   imagen?: any;
   fileRef?: string;
-  horaCreacion?: Date;
+  horaCreacion?: Timestamp;
   categoria?: string;
   relevancia?: boolean;
 }

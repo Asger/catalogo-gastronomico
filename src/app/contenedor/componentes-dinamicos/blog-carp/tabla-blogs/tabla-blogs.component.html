@@ -8,8 +8,8 @@
           pRipple
           label="Agregar un blog"
           icon="pi pi-plus"
-          class="p-button-info mr-2"
-          routerLink="/admin/nueva-noticia"
+          class="bg-principal mr-2"
+          routerLink="/admin/nuevo-blog"
         ></button>
       </ng-template>
     </p-toolbar>
@@ -62,14 +62,14 @@
               pButton
               pRipple
               icon="pi pi-pencil"
-              class="p-button-rounded p-button-info mr-3"
-              [routerLink]="['/admin/editar-noticia', blog.id]"
+              class="p-button-rounded bg-cyan-400 text-white mr-3"
+              [routerLink]="['/admin/editar-blog', blog.id]"
             ></button>
             <button
               pButton
               pRipple
               icon="pi pi-trash"
-              class="p-button-rounded p-button-danger"
+              class="p-button-rounded color-danger text-white"
               (click)="deleteBlog(blog)"
             ></button>
           </td>

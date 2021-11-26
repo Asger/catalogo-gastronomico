@@ -40,34 +40,33 @@
       <div class="triangulo-equilatero-bottom-left"></div>
     </section>
   </div>
-  <div class="col-12 md:col-7 overflow-hidden efecto-cortado">
+  <div
+    class="col-12 md:col-7 overflow-hidden efecto-cortado"
+    *ngIf="carrusel$ | async as carrusel; else loading"
+  >
     <p-galleria
-      [value]="images"
+      [value]="carrusel"
       [responsiveOptions]="responsiveOptions"
       [numVisible]="4"
       [circular]="true"
       [autoPlay]="true"
       [transitionInterval]="3000"
     >
-      <ng-template pTemplate="item" let-item>
-        <img [src]="item.url" class="img-principal" />
+      <ng-template pTemplate="item" let-slider>
+        <img [src]="slider.imagen" class="img-principal" />
       </ng-template>
-      <ng-template pTemplate="thumbnail" let-item>
+      <ng-template pTemplate="thumbnail" let-slider>
         <div class="grid grid-nogutter justify-center caja-img p-1">
-          <img [src]="item.url" />
+          <img [src]="slider.imagen" />
         </div>
       </ng-template>
-      <ng-template pTemplate="caption" let-item>
+      <ng-template pTemplate="caption" let-slider>
         <div class="text-center p-2">
-          <h4 class="color-principal text-3xl md:text-5xl mt-1 mb-1">Comida</h4>
+          <h4 class="color-principal text-3xl md:text-5xl mt-1 mb-1">
+            {{ slider.titulo }}
+          </h4>
           <p class="text-lg">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi
-            deleniti ut ipsam unde illo, earum est quam voluptatum quo, magni
-            autem labore praesentium ea ducimus vel eligendi tempora, laboriosam
-            voluptates. Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Voluptas commodi sed cumque iusto similique minima! Excepturi error
-            iure eveniet earum commodi, voluptates asperiores modi nihil amet
-            consectetur deleniti esse quibusdam?
+            {{ slider.contenido }}
           </p>
         </div>
       </ng-template>
@@ -342,5 +341,8 @@
     </div>
   </div>
 </div>
+<ng-template #loading>
+  <p-progressSpinner class="my-auto" strokeWidth="4"></p-progressSpinner>
+</ng-template>
 
 <app-footer></app-footer>

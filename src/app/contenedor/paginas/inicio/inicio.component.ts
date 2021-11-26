@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { ICarrusel } from 'src/app/shared/models/carrusel.interface';
+
+import { CarruselService } from '../../componentes-dinamicos/carrusel-carp/carrusel.service';
+import { ProductoService } from '../../componentes-dinamicos/producto-carp/producto.service';
 
 @Component({
   selector: 'app-inicio',
@@ -6,11 +11,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./inicio.component.scss'],
 })
 export class InicioComponent implements OnInit {
-  images!: any[];
+  carrusel$!: Observable<ICarrusel[]>;
   responsiveOptions: any;
   responsiveOptionsProducts: any;
   products!: any[];
-  constructor() {
+  constructor(
+    private carruselSvc: CarruselService,
+    private productoSvc: ProductoService
+  ) {
     this.responsiveOptions = [
       {
         breakpoint: '1024px',
@@ -30,7 +38,6 @@ export class InicioComponent implements OnInit {
         breakpoint: '1024px',
         numVisible: 3,
         numScroll: 3,
-        
       },
       {
         breakpoint: '768px',
@@ -41,13 +48,14 @@ export class InicioComponent implements OnInit {
         breakpoint: '560px',
         numVisible: 1,
         numScroll: 1,
-        
       },
     ];
   }
 
   ngOnInit(): void {
-    this.images = [
+    this.carrusel$ = this.carruselSvc.getCarrusel();
+
+    /* this.images = [
       {
         name: 'Elias',
         url: 'https://www.cocinayvino.com/wp-content/uploads/2015/05/11966577_ml-e1481939374535.jpg',
@@ -78,25 +86,26 @@ export class InicioComponent implements OnInit {
         url: 'https://eligeveg.com/mercy4animals.wpengine.com/sites/446/2019/02/Falafel-sandwich-1000x570.jpg',
         price: 200,
       },
-    ];
+    ]; */
     this.products = [
       {
         name: 'Elias',
         url: 'https://www.cocinayvino.com/wp-content/uploads/2015/05/11966577_ml-e1481939374535.jpg',
         price: 200,
-        descripcion:'holaaa'
+        descripcion: 'holaaa',
       },
       {
         name: 'Pedro',
         url: 'https://www.cocinayvino.com/wp-content/uploads/2017/03/45133250_l.jpg',
         price: 200,
-        descripcion:'holaaa como estas'
+        descripcion: 'holaaa como estas',
       },
       {
         name: 'Lucas',
         url: 'https://eligeveg.com/mercy4animals.wpengine.com/sites/446/2019/02/Falafel-sandwich-1000x570.jpg',
         price: 200,
-        descripcion:'holaaa asdasdasdadasdjakjd aksdjaslk j asdkaslkj lkjasdlkja kljalk'
+        descripcion:
+          'holaaa asdasdasdadasdjakjd aksdjaslk j asdkaslkj lkjasdlkja kljalk',
       },
     ];
   }

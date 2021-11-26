@@ -16,6 +16,7 @@ export class NuevoProductoComponent implements OnInit {
   public previsualizacion: string | undefined;
   private imagen: any;
   private imagenOriginal: any;
+  public fecha!: Date | undefined;
   producto: IProducto = {
     nombre: '',
     contenido: '',
@@ -33,6 +34,7 @@ export class NuevoProductoComponent implements OnInit {
     private messageService: MessageService
   ) {}
 
+  // Creo el formulario, junto a sus respectivas propiedades y validaciones.
   public productoForm = new FormGroup({
     nombre: new FormControl('', Validators.required),
     contenido: new FormControl('', Validators.required),
@@ -40,6 +42,7 @@ export class NuevoProductoComponent implements OnInit {
     precio: new FormControl('', Validators.required),
     categoria: new FormControl('', Validators.required),
     relevancia: new FormControl('', Validators.required),
+    horaCreacion: new FormControl('', Validators.required),
   });
 
   ngOnInit(): void {
@@ -48,7 +51,7 @@ export class NuevoProductoComponent implements OnInit {
     if (params.id) {
       /* 
         Si existe un id, quiere decir que va a editar un producto,
-        por ello, traigo los datos actuales de ese producto y los asigno al objeto Producto 
+        por ello, traigo los datos actuales de ese producto y los asigno al objeto producto.
       */
       this.productoSvc.getUnProducto(params.id).subscribe(
         (res) => {
@@ -59,6 +62,7 @@ export class NuevoProductoComponent implements OnInit {
             this.producto.precio = res.precio;
             this.producto.categoria = res.categoria;
             this.producto.relevancia = res.relevancia;
+            this.fecha = res.horaCreacion?.toDate();
 
             this.producto.id = params.id;
             this.imagen = res.imagen;
@@ -72,7 +76,7 @@ export class NuevoProductoComponent implements OnInit {
     }
   }
 
-  // Este método es el encargado de llamar al servicio o intermediario para poder crear un producto
+  // Este método es el encargado de llamar al servicio o intermediario para poder crear un producto.
   agregarProducto(data: IProducto) {
     this.productoSvc.preCrearYActualizarProducto(data, this.imagen);
     this.previsualizacion = undefined;
@@ -89,7 +93,7 @@ export class NuevoProductoComponent implements OnInit {
     this.producto.categoria = '';
   }
 
-  // Este método toma la imagen seleccionada del input imagen
+  // Este método toma la imagen seleccionada del input imagen.
   tomarImagen(event: any): void {
     this.imagen = event.target.files[0];
     this.extraerBase64(this.imagen).then((imagen: any) => {
@@ -97,7 +101,7 @@ export class NuevoProductoComponent implements OnInit {
     });
   }
 
-  // Este método es para sacar la base64 de la imagen, para poderla visualizar
+  // Este método es para sacar la base64 de la imagen, para poderla visualizar.
   extraerBase64 = async ($event: any) =>
     new Promise((resolve, reject) => {
       const unsafeImg = window.URL.createObjectURL($event);
@@ -118,7 +122,7 @@ export class NuevoProductoComponent implements OnInit {
 
   /* 
     Este método actualizara el producto deseado, primero comprobando si el administrador cambio la imagen o no,
-    para subir la imagen en caso de que haya seleccionado otra 
+    para subir la imagen en caso de que haya seleccionado otra. 
   */
   actualizarProducto() {
     if (this.imagen === this.imagenOriginal) {

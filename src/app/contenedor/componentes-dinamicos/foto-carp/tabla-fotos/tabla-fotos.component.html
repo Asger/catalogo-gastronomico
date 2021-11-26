@@ -8,8 +8,8 @@
           pRipple
           label="Agregar una foto"
           icon="pi pi-plus"
-          class="p-button-info mr-2"
-          routerLink="/admin/nueva-noticia"
+          class="bg-principal mr-2"
+          routerLink="/admin/nueva-foto"
         ></button>
       </ng-template>
     </p-toolbar>
@@ -26,7 +26,7 @@
     >
       <ng-template pTemplate="caption">
         <div class="flex justify-content-between">
-          <h3 class="m-0 hidden md:flex pt-2">Gestión de Fotos</h3>
+          <h3 class="m-0 hidden md:flex pt-2">Gestión de Galería</h3>
           <span class="p-input-icon-left">
             <i class="pi pi-search"></i>
             <input
@@ -58,14 +58,14 @@
               pButton
               pRipple
               icon="pi pi-pencil"
-              class="p-button-rounded p-button-info mr-3"
-              [routerLink]="['/admin/editar-noticia', foto.id]"
+              class="p-button-rounded bg-cyan-400 text-white mr-3"
+              [routerLink]="['/admin/editar-foto', foto.id]"
             ></button>
             <button
               pButton
               pRipple
               icon="pi pi-trash"
-              class="p-button-rounded p-button-danger"
+              class="p-button-rounded color-danger text-white"
               (click)="deleteFoto(foto)"
             ></button>
           </td>
