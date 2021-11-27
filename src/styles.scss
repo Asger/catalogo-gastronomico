@@ -159,10 +159,16 @@ p-menubarsub {
 .mt-tabla {
   margin-top: 9em;
 }
-
 .color-danger {
   background-color: #dc3545 !important;
 }
-.p-calendar{
+/* Calendario */
+.p-calendar {
   width: 100%;
 }
+
+/* Editor de texto */
+.ql-size-large {
+  font-size: 1.2em;
+}
+

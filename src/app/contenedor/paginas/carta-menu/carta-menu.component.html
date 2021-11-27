@@ -2,16 +2,17 @@
   [nombreSeccion]="'Menú'"
   [descripcionSeccion]="undefined"
 ></app-hero-seccion>
-<div class="mt-2">
+<div class="mt-2" *ngIf="productos; else loading">
   <p-dataView
     #dv
-    [value]="products"
+    [value]="productos"
     [paginator]="true"
     [rows]="9"
-    filterBy="name"
+    filterBy="nombre"
     [sortField]="sortField"
     [sortOrder]="sortOrder"
     layout="grid"
+    emptyMessage="No hay productos disponibles"
   >
     <ng-template pTemplate="header">
       <div class="flex flex-column md:flex-row md:justify-content-between">
@@ -36,33 +37,28 @@
         <p-dataViewLayoutOptions></p-dataViewLayoutOptions>
       </div>
     </ng-template>
-    <ng-template let-product pTemplate="listItem">
+    <ng-template let-producto pTemplate="listItem">
       <div class="col-12">
         <div class="product-list-item">
-          <img [src]="product.image" [alt]="product.name" class="img-item" />
+          <img
+            [src]="producto.imagen"
+            [alt]="producto.nombre"
+            class="img-item"
+          />
           <div class="product-list-detail">
-            <div class="product-name">{{ product.name }}</div>
-            <div class="product-description mt-3">
-              {{ product.description }} Lorem ipsum dolor sit amet consectetur
-              adipisicing elit. Accusamus excepturi ea dolore quos, commodi et
-              accusantium ab facilis voluptas id dolorem ipsum nobis
-              necessitatibus nisi obcaecati quisquam similique non repellendus.
-              Fuga rerum qui voluptatem ipsam debitis a porro amet blanditiis?
-              Illo fugit odio, repudiandae aliquam accusantium eveniet
-              cupiditate, necessitatibus, assumenda laudantium sit consequuntur
-              dicta nobis ipsa in. Placeat, esse iste.
+            <div class="text-4xl md:text-5xl font-bold">
+              {{ producto.nombre }}
             </div>
-            <!--    <p-rating
-              [ngModel]="product.rating"
-              [readonly]="true"
-              [cancel]="false"
-            ></p-rating> -->
+            <div
+              class="product-description mt-2"
+              [innerHtml]="producto.contenido | convertidorHtml"
+            ></div>
             <i class="fas fa-utensils product-category-icon color-principal"></i
-            ><span class="product-category">{{ product.category }}</span>
+            ><span class="product-category">{{ producto.categoria }}</span>
           </div>
           <div class="product-list-action">
             <span class="product-price border-round p-2 font-bold text-3xl"
-              >${{ product.price }}</span
+              >${{ producto.precio }}</span
             >
             <button
               pButton
@@ -75,40 +71,7 @@
         </div>
       </div>
     </ng-template>
-    <ng-template let-product pTemplate="gridItem">
-      <!-- <div class="col-12 md:col-4 px-2">
-        <div class="product-grid-item card">
-          <div class="product-grid-item-top">
-            <div>
-              <i class="pi pi-tag product-category-icon"></i>
-              <span class="product-category">{{ product.category }}</span>
-            </div>
-            <span
-              [class]="
-                'product-badge status-' + product.inventoryStatus.toLowerCase()
-              "
-              >{{ product.inventoryStatus }}</span
-            >
-          </div>
-          <div class="product-grid-item-content">
-            <img [src]="product.image" [alt]="product.name" />
-            <div class="product-name">{{ product.name }}</div>
-            <div class="product-description">{{ product.description }}</div>
-            <p-rating
-              [ngModel]="product.rating"
-              [readonly]="true"
-              [cancel]="false"
-            ></p-rating>
-          </div>
-          <div class="product-grid-item-bottom">
-            <span class="product-price">${{ product.price }}</span>
-            <p-button
-              icon="pi pi-shopping-cart"
-              [disabled]="product.inventoryStatus === 'OUTOFSTOCK'"
-            ></p-button>
-          </div>
-        </div>
-      </div> -->
+    <ng-template let-producto pTemplate="gridItem">
       <div class="col-12 md:col-12 lg:col-6 px-2 md:px-4">
         <div class="card-container">
           <div class="card">
@@ -125,16 +88,17 @@
                       "
                     ></i>
                     <span class="card-author text-500">{{
-                      product.category
+                      producto.categoria
                     }}</span>
                   </div>
 
-                  <h2 class="text-4xl md:text-5xl">{{ product.name }}</h2>
-                  <span class="card-description text-500 p-body"
-                    >{{ product.description }} Lorem, ipsum dolor sit amet
-                    consectetur adipisicing elit. Facere a modi quam ut sit
-                    dicta alias voluptate.consectetur adipisicing elit. Facere a
-                    modi quam ut sit dicta alias voluptate.
+                  <h2 class="text-4xl md:text-5xl mb-4">
+                    {{ producto.nombre }}
+                  </h2>
+                  <span
+                    class="card-description text-500 p-body"
+                    [innerHtml]="producto.contenido | convertidorHtml"
+                  >
                   </span>
                   <div class="flex justify-content-between md:block mt-4">
                     <button
@@ -152,15 +116,15 @@
                         p-2
                         font-bold
                       "
-                      >${{ product.price }}</span
+                      >${{ producto.precio }}</span
                     >
                   </div>
                 </div>
               </div>
               <div class="col-12 md:col-6">
                 <img
-                  [src]="product.image"
-                  alt=""
+                  [src]="producto.imagen"
+                  [alt]="producto.nombre"
                   class="card-media border-round"
                 />
               </div>
@@ -172,4 +136,10 @@
   </p-dataView>
 </div>
 
-<app-footer></app-footer>
+<ng-template #loading>
+  <p-progressSpinner
+    class="flex justify-content-center my-5"
+    strokeWidth="4"
+  ></p-progressSpinner>
+  <app-footer></app-footer>
+</ng-template>

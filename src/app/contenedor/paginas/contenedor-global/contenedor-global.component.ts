@@ -13,6 +13,7 @@ export class ContenedorGlobalComponent implements OnInit {
   items!: MenuItem[];
   itemsPanel!: MenuItem[];
 
+  // Esta variable me permitira saber el estado del usuario y de esta manera ocultar o mostrar botones, secciones, etc.
   public userData$: Observable<any> = this.authSvc.userData$;
   constructor(public authSvc: AuthService) {}
 
@@ -103,6 +104,7 @@ export class ContenedorGlobalComponent implements OnInit {
         routerLink: 'contacto',
       },
     ];
+
     this.itemsPanel = [
       {
         label: 'Inicio',

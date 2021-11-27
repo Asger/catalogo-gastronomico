@@ -5,41 +5,46 @@
   "
 ></app-hero-seccion>
 
-<div class="container my-4">
+<div class="container my-4" *ngIf="blogs$ | async as blogs; else loading">
   <div class="grid">
-    <div class="col-12">
+    <div class="col-12" *ngFor="let blog of blogs">
       <section class="dark">
         <article class="postcard dark blue">
           <div class="postcard__img_link">
             <img
               class="postcard__img"
-              src="https://picsum.photos/1000/1000"
-              alt="Image Title"
+              [src]="blog.imagen"
+              [alt]="blog.titulo"
             />
           </div>
           <div class="postcard__text">
-            <h1 class="postcard__title blue"><a>Podcast Title</a></h1>
-            <div class="postcard__subtitle small mt-3 mb-2">
+            <h1 class="postcard__title blue">
+              <a>{{ blog.titulo }}</a>
+            </h1>
+            <div
+              class="
+                postcard__subtitle
+                small
+                mt-3
+                mb-2
+                flex
+                justify-content-between
+              "
+            >
               <time>
-                <i class="fas fa-calendar-alt mr-2 color-principal"></i>Mon, May
-                25th 2020
+                <i class="fas fa-calendar-alt mr-2 color-principal"></i>
+                {{ blog.horaCreacion?.valueOf() | date: "dd/MM/yyyy" }}
               </time>
             </div>
             <div class="postcard__bar"></div>
-            <div class="postcard__preview-txt">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi,
-              fugiat asperiores inventore beatae accusamus odit minima enim,
-              commodi quia, doloribus eius! Ducimus nemo accusantium maiores
-              velit corrupti tempora reiciendis molestiae repellat vero. Eveniet
-              ipsam adipisci illo iusto quibusdam, sunt neque nulla unde ipsum
-              dolores nobis enim quidem excepturi, illum quos! Lorem ipsum
-              dolor, sit amet consectetur adipisicing elit. Qui doloribus
-              ducimus quia accusamus deserunt consectetur aut reiciendis
-              aspernatur necessitatibus molestias cupiditate exercitationem
-              fugit, optio accusantium veniam illo est eligendi minima?
-            </div>
+            <div
+              class="postcard__preview-txt"
+              [innerHtml]="blog.contenido | convertidorHtml"
+            ></div>
             <ul class="postcard__tagbox">
-              <li class="tag__item">Novedad</li>
+              <li class="tag__item px-2 py-1 text-base">
+                {{ blog.categoria }}
+              </li>
             </ul>
           </div>
         </article>
@@ -47,5 +52,10 @@
     </div>
   </div>
 </div>
-
+<ng-template #loading>
+  <p-progressSpinner
+    class="flex justify-content-center my-5"
+    strokeWidth="4"
+  ></p-progressSpinner>
+</ng-template>
 <app-footer></app-footer>

@@ -1,31 +1,34 @@
 <app-hero-seccion [nombreSeccion]="'Galería'" [descripcionSeccion]="'Algunas fotos de nuestro negocio'"></app-hero-seccion>
-<div class="container text-white mb-4">
+<div class="container text-white mb-4" *ngIf="fotosRestaurante && fotosPlatillos; else loading">
     <h2 class="text-4xl md:text-6xl color-principal text-center">Fotos de nuestro restaurante</h2>
-    <p-galleria [value]="images" [(visible)]="displayCustom" [(activeIndex)]="activeIndex" [responsiveOptions]="responsiveOptions" [containerStyle]="{'max-width': '850px'}" [numVisible]="7"
+    <p-galleria [value]="fotosRestaurante" [(visible)]="displayCustom" [(activeIndex)]="activeIndex" [responsiveOptions]="responsiveOptions" [containerStyle]="{'max-width': '850px'}" [numVisible]="7"
     [circular]="true" [fullScreen]="true" [showItemNavigators]="true" [showThumbnails]="false" [baseZIndex]="100000">
     <ng-template pTemplate="item" let-item>
         <img [src]="item.imagen" style="width: 100%; display: block;"/>
     </ng-template>
     </p-galleria>
-    <div *ngIf="images" class="grid">
-        <div *ngFor="let image of images; let index = index;" class="col-12 md:col-4" key="index">
-            <img [src]="image.imagen" [alt]="image.alt" class="img-responsive" style="cursor: pointer" (click)="imageClick(index)"/>
+    <div *ngIf="fotosRestaurante" class="grid">
+        <div *ngFor="let image of fotosRestaurante; let index = index;" class="col-12 md:col-4" key="index">
+            <img [src]="image.imagen" [alt]="image.titulo" class="img-responsive" style="cursor: pointer" (click)="imageClick(index)"/>
         </div>
     </div>
     <hr class="divisor mt-6 mb-7" />
     <h2 class="text-4xl md:text-6xl color-principal text-center">Algunas fotos de nuestros platillos más destacados</h2>
-    <p-galleria [value]="images2" [(visible)]="displayCustom2" [(activeIndex)]="activeIndex2" [responsiveOptions]="responsiveOptions" [containerStyle]="{'max-width': '850px'}" [numVisible]="7"
+    <p-galleria [value]="fotosPlatillos" [(visible)]="displayCustom2" [(activeIndex)]="activeIndex2" [responsiveOptions]="responsiveOptions" [containerStyle]="{'max-width': '850px'}" [numVisible]="7"
     [circular]="true" [fullScreen]="true" [showItemNavigators]="true" [showThumbnails]="false" [baseZIndex]="100000">
     <ng-template pTemplate="item" let-item>
         <img [src]="item.imagen" style="width: 100%; display: block;"/>
     </ng-template>
     </p-galleria>
-    <div *ngIf="images2" class="grid">
-        <div *ngFor="let image of images2; let index = index;" class="col-12 md:col-4" key="index">
-            <img [src]="image.imagen" [alt]="image.alt" class="img-responsive" style="cursor: pointer" (click)="imageClickdos(index)"/>
+    <div *ngIf="fotosPlatillos" class="grid">
+        <div *ngFor="let image of fotosPlatillos; let index = index;" class="col-12 md:col-4" key="index">
+            <img [src]="image.imagen" [alt]="image.titulo" class="img-responsive" style="cursor: pointer" (click)="imageClickdos(index)"/>
         </div>
     </div>
 </div>
-
+<ng-template #loading>
+    <p-progressSpinner class="flex justify-content-center my-5" strokeWidth="4"></p-progressSpinner>
+</ng-template>
+  
 <app-footer></app-footer>
     

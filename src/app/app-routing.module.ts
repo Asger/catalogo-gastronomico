@@ -14,6 +14,7 @@ const routes: Routes = [
       { path: 'galeria', loadChildren: () => import('./contenedor/paginas/galeria/galeria.module').then(m => m.GaleriaModule) },
       { path: 'login', loadChildren: () => import('./contenedor/auth/login/login.module').then(m => m.LoginModule) },
       { path: 'admin', loadChildren: () => import('./contenedor/admin/admin.module').then(m => m.AdminModule) },
+      { path: 'producto-detallado/:id', loadChildren: () => import('./contenedor/componentes-dinamicos/producto-carp/producto-detallado/producto-detallado.module').then(m => m.ProductoDetalladoModule) },
       { path: '', redirectTo: 'inicio', pathMatch: 'full' }
     ]
   },

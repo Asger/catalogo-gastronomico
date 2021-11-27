@@ -7,6 +7,7 @@ import { PrimengModule } from 'src/app/primeng-module';
 import { FormsModule } from '@angular/forms';
 import { HeroSeccionModule } from 'src/app/shared/components/hero-seccion/hero-seccion.module';
 import { FooterModule } from 'src/app/shared/components/footer/footer.module';
+import { ConvertidorHtmlModule } from 'src/app/shared/pipes/convertidor-html/convertidor-html.module';
 
 @NgModule({
   declarations: [CartaMenuComponent],
@@ -16,7 +17,8 @@ import { FooterModule } from 'src/app/shared/components/footer/footer.module';
     PrimengModule,
     FormsModule,
     HeroSeccionModule,
-    FooterModule
+    FooterModule,
+    ConvertidorHtmlModule,
   ],
 })
 export class CartaMenuModule {}

@@ -29,7 +29,7 @@ import { DataViewModule } from 'primeng/dataview';
 import { RatingModule } from 'primeng/rating';
 import { RippleModule } from 'primeng/ripple';
 import { PanelMenuModule } from 'primeng/panelmenu';
-import {SlideMenuModule} from 'primeng/slidemenu';
+import { SlideMenuModule } from 'primeng/slidemenu';
 
 @NgModule({
   exports: [
@@ -63,7 +63,7 @@ import {SlideMenuModule} from 'primeng/slidemenu';
     RatingModule,
     RippleModule,
     PanelMenuModule,
-    SlideMenuModule
+    SlideMenuModule,
   ],
 })
 export class PrimengModule {}

@@ -35,7 +35,7 @@ export class NuevoSliderComponent implements OnInit {
     titulo: new FormControl('', Validators.required),
     contenido: new FormControl('', [
       Validators.required,
-      Validators.maxLength(443),
+      Validators.maxLength(410),
     ]),
     imagen: new FormControl('', Validators.required),
     horaCreacion: new FormControl('', Validators.required),

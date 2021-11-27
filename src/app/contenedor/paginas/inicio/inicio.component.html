@@ -13,13 +13,11 @@
       info-general
     "
   >
-    <section class="mt-7 md:mt-2 info">
-      <span class="lineas-efecto text-center block text-5xl font-bold mb-1"
+    <section class="mt-8 md:mt-6 info">
+      <span class="lineas-efecto text-center block text-4xl font-bold mb-1"
         >Bienvenido a</span
       >
-      <div
-        class="text-center text-7xl md:text-8xl color-principal font-bold mb-3"
-      >
+      <div class="text-center titulo color-principal font-bold mb-3">
         Health & Food
       </div>
       <p class="mt-0 mb-4 text-base md:text-lg line-height-3">
@@ -61,13 +59,14 @@
         </div>
       </ng-template>
       <ng-template pTemplate="caption" let-slider>
-        <div class="text-center p-2">
-          <h4 class="color-principal text-3xl md:text-5xl mt-1 mb-1">
+        <div class="text-center px-1 md:px-3">
+          <h4 class="color-principal text-3xl md:text-4xl mt-1 mb-1">
             {{ slider.titulo }}
           </h4>
-          <p class="text-lg">
-            {{ slider.contenido }}
-          </p>
+          <div
+            class="text-lg"
+            [innerHtml]="slider.contenido | convertidorHtml"
+          ></div>
         </div>
       </ng-template>
     </p-galleria>
@@ -129,13 +128,6 @@
       >
     </div>
     <div class="col-12 md:col-6 lg:col-4 mb-4 px-5">
-      <!-- <span
-        class="p-3 shadow-2 mb-3 inline-block surface-card"
-        style="border-radius: 10px"
-      >
-        <i class="pi pi-star-o text-4xl color-principal"></i>
-      </span>
-      <div class="text-900 mb-3 text-2xl font-medium">Open Source</div> -->
       <span class="text-700 text-2xl md:text-3xl line-height-3 font-italic"
         >Una gastronomía diferente que conseguirá darle la vuelta a todo lo que
         has visto anteriormente. Sabores nuevos, texturas diferentes, aromas
@@ -179,19 +171,11 @@
         Estos son los más sobresalientes y aquellos que nos representan, según
         la opinión de nuestros clientes.
       </div>
-
-      <button
-        pButton
-        pRipple
-        label="Ver más"
-        class="p-button-outlined border-principal"
-        routerLink="/carta-menu/platillos-principales"
-      ></button>
     </section>
   </div>
-  <div class="col-12 md:col-6 overflow-hidden">
+  <div class="col-12 md:col-6 overflow-hidden" *ngIf="productos; else loading">
     <p-carousel
-      [value]="products"
+      [value]="productos"
       styleClass="custom-carousel"
       [showNavigators]="true"
       [numVisible]="1"
@@ -200,26 +184,30 @@
       [autoplayInterval]="5000"
       [responsiveOptions]="responsiveOptionsProducts"
     >
-      <ng-template let-product pTemplate="item">
+      <ng-template let-producto pTemplate="item">
         <div class="product-item">
           <div class="product-item-content">
             <div class="recipe-card border-round">
               <aside>
                 <img
-                  [src]="product.url"
-                  alt="Chai Oatmeal"
+                  [src]="producto.imagen"
+                  [alt]="producto.nombre"
                   class="img-platillo"
                 />
 
-                <a href="#" class="button"
+                <a
+                [routerLink]="['/producto-detallado', producto.id]"
+                  class="button"
                   >Leer en detalle<i class="fas fa-arrow-right ml-2"></i
                 ></a>
               </aside>
 
               <article class="p-4">
-                <h2 class="text-3xl md:text-4xl">{{ product.name }}</h2>
-                <h3>Platillo principal</h3>
-                <ul>
+                <h2 class="text-3xl md:text-4xl mb-2 color-principal">
+                  {{ producto.nombre }}
+                </h2>
+                <h3>{{ producto.categoria }}</h3>
+                <ul class="mt-3 mb-0">
                   <li>
                     <i class="fas fa-user mr-2 color-principal"></i
                     ><span>1</span>
@@ -230,30 +218,12 @@
                   </li>
                 </ul>
 
-                <p class="p-body">
-                  {{ product.descripcion }}
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam
-                  quibusdam sint cum earum vel vero voluptatem minima
-                  accusantium, et quasi corporis libero! Ipsam molestiae vero
-                  facere ullam perspiciatis dolores. Culpa? Veritatis sint
-                  labore blanditiis cumque, doloremque similique odio. Nobis
-                  minima sint rem, tenetur distinctio magni adipisci, laudantium
-                  nulla aliquid quos ut provident fugit iusto ducimus illum
-                  incidunt expedita, sequi consectetur! Expedita cumque libero
-                  eum suscipit. Ab corporis quos at atque perferendis nulla
-                  accusantium excepturi, quam quae minus magni ad, minima fugiat
-                  reiciendis nesciunt! Nisi ad, ipsa pariatur soluta quos eius.
-                </p>
+                <div
+                  class="p-body"
+                  [innerHtml]="producto.contenido | convertidorHtml"
+                ></div>
               </article>
             </div>
-            <!-- 
-                  <div class="p-mb-3">
-                      <img [src]="product.url" [alt]="product.name" class="product-image img-principal" />
-                  </div>
-                  <div>
-                      <h4 class="p-mb-1">{{product.name}}</h4>
-                      <h6 class="p-mt-0 p-mb-3">${{product.price}}</h6>
-                  </div> -->
           </div>
         </div>
       </ng-template>

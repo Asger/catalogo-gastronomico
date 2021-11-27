@@ -7,6 +7,7 @@ import { BlogComponent } from './blog.component';
 import { HeroSeccionModule } from 'src/app/shared/components/hero-seccion/hero-seccion.module';
 import { PrimengModule } from 'src/app/primeng-module';
 import { FooterModule } from 'src/app/shared/components/footer/footer.module';
+import { ConvertidorHtmlModule } from 'src/app/shared/pipes/convertidor-html/convertidor-html.module';
 
 @NgModule({
   declarations: [BlogComponent],
@@ -16,6 +17,7 @@ import { FooterModule } from 'src/app/shared/components/footer/footer.module';
     HeroSeccionModule,
     PrimengModule,
     FooterModule,
+    ConvertidorHtmlModule,
   ],
 })
 export class BlogModule {}

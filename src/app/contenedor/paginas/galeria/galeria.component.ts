@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { IFoto } from 'src/app/shared/models/foto.interface';
+import { FotoService } from '../../componentes-dinamicos/foto-carp/foto.service';
 
 @Component({
   selector: 'app-galeria',
@@ -6,8 +9,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./galeria.component.scss'],
 })
 export class GaleriaComponent implements OnInit {
-  images!: any[];
-  images2!: any[];
+  fotosRestaurante!: IFoto[];
+  fotosPlatillos!: IFoto[];
+
   responsiveOptions: any[] = [
     {
       breakpoint: '1024px',
@@ -31,45 +35,17 @@ export class GaleriaComponent implements OnInit {
 
   activeIndex2: number = 0;
 
-  constructor() {}
+  constructor(private fotoSvc: FotoService) {}
 
   ngOnInit(): void {
-    this.images = [
-      {
-        imagen:
-          'https://d3b4yo2b5lbfy.cloudfront.net/wp-content/uploads/wallpapers/af6953a10506-1920x1080.jpg',
-      },
-      {
-        imagen:
-          'https://i.pinimg.com/564x/ca/1e/c9/ca1ec9ddae43e88891238e506901abd1.jpg',
-      },
-      {
-        imagen:
-          'https://www.todopaisajes.com/1920x1080/fondo-3d-del-espacio.jpg',
-      },
-      {
-        imagen:
-          'https://www.mascotahogar.com/1920x1080/dibujo-de-un-gato-como-wallpaper.jpg',
-      },
-      {
-        imagen:
-          'https://www.fonditos3d.com/1920x1080/arbol-de-un-universo-de-fantasia.jpg',
-      },
-    ];
-    this.images2 = [
-      {
-        imagen:
-          'https://www.mascotahogar.com/1920x1080/dibujo-de-un-gato-como-wallpaper.jpg',
-      },
-      {
-        imagen:
-          'https://i.pinimg.com/564x/ca/1e/c9/ca1ec9ddae43e88891238e506901abd1.jpg',
-      },
-      {
-        imagen:
-          'https://www.fonditos3d.com/1920x1080/arbol-de-un-universo-de-fantasia.jpg',
-      },
-    ];
+    this.fotoSvc.getTodasFotos().subscribe((res) => {
+      this.fotosRestaurante = res.filter((el) => {
+        return el.categoria === 'Foto de nuestro restaurante';
+      });
+      this.fotosPlatillos = res.filter((el) => {
+        return el.categoria === 'Foto de nuestro platillo más destacado';
+      });
+    });
   }
 
   imageClick(index: number) {

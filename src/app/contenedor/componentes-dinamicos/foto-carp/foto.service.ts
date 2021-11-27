@@ -24,7 +24,7 @@ export class FotoService {
     private storage: AngularFireStorage
   ) {
     // Creo la referencia de la colección en Firebase
-    this.fotosColeccion = this.afs.collection<IFoto>(`Fotos`, (ref) =>
+    this.fotosColeccion = this.afs.collection<IFoto>(`fotos`, (ref) =>
       ref.orderBy('horaCreacion', 'desc')
     );
   }

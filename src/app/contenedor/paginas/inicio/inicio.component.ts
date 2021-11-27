@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { ICarrusel } from 'src/app/shared/models/carrusel.interface';
-
+import { IProducto } from 'src/app/shared/models/producto.interface';
 import { CarruselService } from '../../componentes-dinamicos/carrusel-carp/carrusel.service';
 import { ProductoService } from '../../componentes-dinamicos/producto-carp/producto.service';
 
@@ -11,10 +11,13 @@ import { ProductoService } from '../../componentes-dinamicos/producto-carp/produ
   styleUrls: ['./inicio.component.scss'],
 })
 export class InicioComponent implements OnInit {
-  carrusel$!: Observable<ICarrusel[]>;
   responsiveOptions: any;
   responsiveOptionsProducts: any;
-  products!: any[];
+  // Variable que contedra los sliders del carrusel
+  carrusel$!: Observable<ICarrusel[]>;
+  // Variable que contedra los productos
+  productos!: IProducto[];
+
   constructor(
     private carruselSvc: CarruselService,
     private productoSvc: ProductoService
@@ -54,60 +57,11 @@ export class InicioComponent implements OnInit {
 
   ngOnInit(): void {
     this.carrusel$ = this.carruselSvc.getCarrusel();
-
-    /* this.images = [
-      {
-        name: 'Elias',
-        url: 'https://www.cocinayvino.com/wp-content/uploads/2015/05/11966577_ml-e1481939374535.jpg',
-        price: 200,
-      },
-      {
-        name: 'Pedro',
-        url: 'https://media.istockphoto.com/photos/grilled-sliced-steak-striploin-picture-id692634586?k=20&m=692634586&s=612x612&w=0&h=QkuTwEEx03aHVp9e3M8bIowGEQiA4kjx34nb1y4CX2A=',
-        price: 200,
-      },
-      {
-        name: 'Lucas',
-        url: 'https://files.adventistas.org/quierovidaysalud.com/2019/07/shutterstock_1108602593.jpg',
-        price: 200,
-      },
-      {
-        name: 'Elias',
-        url: 'https://saboryestilo.com.mx/wp-content/uploads/2019/09/platillos-tipicos-de-mexico1-1200x675.jpg',
-        price: 200,
-      },
-      {
-        name: 'Pedro',
-        url: 'https://www.cocinayvino.com/wp-content/uploads/2017/03/45133250_l.jpg',
-        price: 200,
-      },
-      {
-        name: 'Lucas',
-        url: 'https://eligeveg.com/mercy4animals.wpengine.com/sites/446/2019/02/Falafel-sandwich-1000x570.jpg',
-        price: 200,
-      },
-    ]; */
-    this.products = [
-      {
-        name: 'Elias',
-        url: 'https://www.cocinayvino.com/wp-content/uploads/2015/05/11966577_ml-e1481939374535.jpg',
-        price: 200,
-        descripcion: 'holaaa',
-      },
-      {
-        name: 'Pedro',
-        url: 'https://www.cocinayvino.com/wp-content/uploads/2017/03/45133250_l.jpg',
-        price: 200,
-        descripcion: 'holaaa como estas',
-      },
-      {
-        name: 'Lucas',
-        url: 'https://eligeveg.com/mercy4animals.wpengine.com/sites/446/2019/02/Falafel-sandwich-1000x570.jpg',
-        price: 200,
-        descripcion:
-          'holaaa asdasdasdadasdjakjd aksdjaslk j asdkaslkj lkjasdlkja kljalk',
-      },
-    ];
+    this.productoSvc.getTodosProductos().subscribe((res) => {
+      this.productos = res.filter((el) => {
+        return el.relevancia === true;
+      });
+    });
   }
 
   scrollToElement($element: any): void {
