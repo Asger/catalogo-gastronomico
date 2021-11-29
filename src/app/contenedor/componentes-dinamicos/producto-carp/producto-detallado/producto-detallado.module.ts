@@ -5,6 +5,7 @@ import { ProductoDetalladoRoutingModule } from './producto-detallado-routing.mod
 import { ProductoDetalladoComponent } from './producto-detallado.component';
 import { FooterModule } from 'src/app/shared/components/footer/footer.module';
 import { PrimengModule } from 'src/app/primeng-module';
+import { ConvertidorHtmlModule } from 'src/app/shared/pipes/convertidor-html/convertidor-html.module';
 
 @NgModule({
   declarations: [ProductoDetalladoComponent],
@@ -13,6 +14,7 @@ import { PrimengModule } from 'src/app/primeng-module';
     ProductoDetalladoRoutingModule,
     FooterModule,
     PrimengModule,
+    ConvertidorHtmlModule,
   ],
 })
 export class ProductoDetalladoModule {}

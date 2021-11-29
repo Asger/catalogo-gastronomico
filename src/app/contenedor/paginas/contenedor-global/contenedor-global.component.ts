@@ -58,7 +58,7 @@ export class ContenedorGlobalComponent implements OnInit {
             items: [
               {
                 label: 'Sin alcohol',
-                icon: 'fa-lg fas fa-wine-glass',
+                icon: 'fa-lg fas fa-wine-glass ml-1',
                 routerLink: 'carta-menu/bebidas-sin-alcohol',
               },
               {

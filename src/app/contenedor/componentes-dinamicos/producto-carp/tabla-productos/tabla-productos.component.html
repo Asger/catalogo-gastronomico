@@ -1,5 +1,5 @@
 <ng-container *ngIf="cargado; else loading">
-  <div class="container mt-tabla">
+  <div class="container mt-tabla mb-7">
     <p-toast position="bottom-center"></p-toast>
     <p-toolbar styleClass="mt-5 mb-2">
       <ng-template pTemplate="left">
@@ -41,7 +41,7 @@
       <ng-template pTemplate="header">
         <tr>
           <th pSortableColumn="nombre">
-            Título <p-sortIcon field="nombre"></p-sortIcon>
+            Nombre <p-sortIcon field="nombre"></p-sortIcon>
           </th>
           <th>Imagen</th>
           <th pSortableColumn="categoria">

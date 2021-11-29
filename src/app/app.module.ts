@@ -8,7 +8,6 @@ import { ContenedorGlobalComponent } from './contenedor/paginas/contenedor-globa
 import { PrimengModule } from './primeng-module';
 import { FirebaseModule } from './firebase-module';
 
-
 @NgModule({
   declarations: [AppComponent, ContenedorGlobalComponent],
   imports: [

@@ -25,9 +25,11 @@ export class TablaProductosComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    // Tomo el parametro de la ruta, que en esta caso sería la sección.
     this.activatedRoute.paramMap.subscribe((params: ParamMap) => {
       this.seccion = params.get('seccion');
 
+      // Dependiendo el parametro, cargo los productos en la tabla
       switch (this.seccion) {
         case 'tabla-platillos':
           this.productoSvc.getTodosProductos().subscribe((res) => {
@@ -66,6 +68,10 @@ export class TablaProductosComponent implements OnInit {
     });
   }
 
+  /* 
+    Este método me permitira eliminar un producto en específico, llamando al servicio y mandando el producto, el cual
+    brindara su id para eliminarlo. 
+  */
   deleteProducto(producto: IProducto) {
     this.confirmationService.confirm({
       message:

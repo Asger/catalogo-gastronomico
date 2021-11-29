@@ -28,6 +28,10 @@ export class TablaSlidersComponent implements OnInit {
     });
   }
 
+  /* 
+    Este método me permitira eliminar un slider en específico, llamando al servicio y mandando el slider, el cual
+    brindara su id para eliminarlo. 
+  */
   deleteSlider(slider: ICarrusel) {
     this.confirmationService.confirm({
       message:

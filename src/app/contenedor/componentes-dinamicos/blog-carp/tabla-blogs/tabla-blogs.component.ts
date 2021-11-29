@@ -28,6 +28,10 @@ export class TablaBlogsComponent implements OnInit {
     });
   }
 
+  /* 
+    Este método me permitira eliminar un blog en específico, llamando al servicio y mandando el blog, el cual
+    brindara su id para eliminarlo. 
+  */
   deleteBlog(blog: IBlog) {
     this.confirmationService.confirm({
       message:

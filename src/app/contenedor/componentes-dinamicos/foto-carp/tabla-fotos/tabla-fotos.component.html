@@ -44,6 +44,9 @@
             Título <p-sortIcon field="titulo"></p-sortIcon>
           </th>
           <th>Imagen</th>
+          <th pSortableColumn="categoria">
+            Categoría <p-sortIcon field="categoria"></p-sortIcon>
+          </th>
           <th></th>
         </tr>
       </ng-template>
@@ -53,6 +56,7 @@
           <td>
             <img [src]="foto.imagen" [alt]="foto.titulo" />
           </td>
+          <td>{{ foto.categoria }}</td>
           <td>
             <button
               pButton

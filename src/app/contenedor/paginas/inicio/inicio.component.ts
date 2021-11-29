@@ -1,3 +1,4 @@
+import { ViewportScroller } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { ICarrusel } from 'src/app/shared/models/carrusel.interface';
@@ -20,7 +21,8 @@ export class InicioComponent implements OnInit {
 
   constructor(
     private carruselSvc: CarruselService,
-    private productoSvc: ProductoService
+    private productoSvc: ProductoService,
+    private viewportScroller: ViewportScroller
   ) {
     this.responsiveOptions = [
       {
@@ -65,11 +67,11 @@ export class InicioComponent implements OnInit {
   }
 
   scrollToElement($element: any): void {
-    console.log($element);
     $element.scrollIntoView({
       behavior: 'smooth',
       block: 'start',
       inline: 'nearest',
     });
   }
+
 }

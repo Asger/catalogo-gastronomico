@@ -7,7 +7,7 @@
     #dv
     [value]="productos"
     [paginator]="true"
-    [rows]="9"
+    [rows]="8"
     filterBy="nombre"
     [sortField]="sortField"
     [sortOrder]="sortOrder"
@@ -61,6 +61,7 @@
               >${{ producto.precio }}</span
             >
             <button
+              [routerLink]="['/producto-detallado', producto.id]"
               pButton
               pRipple
               label="Ver en detalle"
@@ -102,6 +103,7 @@
                   </span>
                   <div class="flex justify-content-between md:block mt-4">
                     <button
+                      [routerLink]="['/producto-detallado', producto.id]"
                       pButton
                       pRipple
                       label="Ver en detalle"

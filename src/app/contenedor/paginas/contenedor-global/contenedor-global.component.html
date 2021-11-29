@@ -7,44 +7,12 @@
     <div class="hidden md:block">
       <div class="flex">
         <img src="../../../../assets/logo.png" height="65" class="mr-3" />
-        <a class="my-auto text-xl color-principal">Health & Food</a>
+        <a class="my-auto text-xl color-principal hidden xl:block">Health & Food</a>
       </div>
     </div>
   </ng-template>
   <ng-template pTemplate="end">
     <div class="flex">
-      <div class="delimitador hidden mx-3"></div>
-      <div class="hidden lg:block">
-        <a
-          href=""
-          pButton
-          pRipple
-          icon="fa-lg fab fa-facebook text-2xl"
-          class="redes-sociales px-4 mr-2"
-        ></a>
-        <a
-          href=""
-          pButton
-          pRipple
-          icon="fa-lg fab fa-instagram text-2xl"
-          class="redes-sociales px-4 mr-2"
-        ></a>
-        <a
-          href=""
-          pButton
-          pRipple
-          icon="fa-lg fab fa-twitter text-2xl"
-          class="redes-sociales px-4 mr-2"
-        ></a>
-        <a
-          href=""
-          pButton
-          pRipple
-          icon="fa-lg fab fa-whatsapp text-2xl"
-          class="redes-sociales px-4"
-        ></a>
-      </div>
-
       <div class="delimitador hidden lg:block mx-3"></div>
       <div *ngIf="userData$ | async as userData; else login">
         <button

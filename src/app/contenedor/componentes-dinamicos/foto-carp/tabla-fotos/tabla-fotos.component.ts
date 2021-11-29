@@ -28,6 +28,10 @@ export class TablaFotosComponent implements OnInit {
     });
   }
 
+  /* 
+    Este método me permitira eliminar una foto en específico, llamando al servicio y mandando la foto, la cual
+    brindara su id para eliminarla. 
+  */
   deleteFoto(foto: IFoto) {
     this.confirmationService.confirm({
       message:

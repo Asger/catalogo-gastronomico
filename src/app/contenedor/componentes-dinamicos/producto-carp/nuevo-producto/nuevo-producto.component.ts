@@ -17,6 +17,7 @@ export class NuevoProductoComponent implements OnInit {
   private imagen: any;
   private imagenOriginal: any;
   public fecha!: Date | undefined;
+  //public categoria!: string;
   producto: IProducto = {
     nombre: '',
     contenido: '',
