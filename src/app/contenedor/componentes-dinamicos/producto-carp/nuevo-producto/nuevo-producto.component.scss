@@ -17,3 +17,62 @@ select.ng-valid.ng-touched {
 .errores {
   color: red;
 }
+.divisor {
+  text-align: center;
+  width: 80%;
+  border-color: #ff8800;
+}
+
+/* Card del producto */
+.card {
+  position: relative;
+  width: 100%;
+  margin-top: 150px;
+  background-color: #121212;
+  border: 10px double #ff8800;
+  -webkit-box-shadow: 10px 10px 93px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 10px 10px 93px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 10px 10px 40px 0px rgba(255, 136, 0, 0.75);
+  .thumbnail {
+    position: relative;
+    top: -90px;
+    height: 450px;
+    margin: auto;
+    width: 60%;
+    -webkit-box-shadow: 10px 10px 60px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 10px 10px 60px 0px rgba(0, 0, 0, 0.75);
+    box-shadow: 10px 10px 60px 0px rgba(0, 0, 0, 0.75);
+    overflow: hidden;
+    img.img-responsive {
+      border-radius: 10px;
+      border-bottom: 8px double #ff8800;
+      object-fit: cover;
+      width: 100% !important;
+      height: 100% !important;
+    }
+  }
+  .info {
+    width: 100%;
+    position: relative;
+    top: -60px;
+    h1 {
+      padding-top: 15px;
+      font-size: 1.3rem;
+    }
+    .separator {
+      width: 90%;
+      border: 1px solid #ff8800;
+    }
+    .text-info {
+      line-height: 150%;
+      color: #dadada;
+    }
+  }
+}
+
+/* Carrusel de los platos principales */
+@media (max-width: 765px) {
+  .thumbnail {
+    width: 100% !important;
+  }
+}

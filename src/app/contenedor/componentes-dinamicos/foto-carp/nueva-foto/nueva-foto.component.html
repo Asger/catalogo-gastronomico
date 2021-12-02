@@ -110,4 +110,60 @@
       </div>
     </div>
   </form>
+
+  <div class="hidden md:block">
+    <hr class="divisor mt-6 mb-7" />
+    <h3 class="text-4xl md:text-6xl color-principal text-center uppercase">
+      Previsualización
+    </h3>
+    <div class="container mb-6">
+      <p-galleria
+        [value]="fotos"
+        [(visible)]="displayCustom"
+        [(activeIndex)]="activeIndex"
+        [responsiveOptions]="responsiveOptions"
+        [containerStyle]="{ 'max-width': '850px' }"
+        [numVisible]="7"
+        [circular]="true"
+        [fullScreen]="true"
+        [showItemNavigators]="true"
+        [showThumbnails]="false"
+        [baseZIndex]="100000"
+      >
+        <ng-template pTemplate="item" let-item>
+          <img
+            [src]="
+              previsualizacion == null
+                ? '../../../../assets/noFoto.png'
+                : previsualizacion
+            "
+            class="border-round"
+            style="width: 100%; display: block"
+          />
+          <div class="caption-img p-3 border-round">
+            {{ foto.titulo == "" ? "Título..." : foto.titulo }}
+          </div>
+        </ng-template>
+      </p-galleria>
+      <div *ngIf="fotos" class="grid justify-content-center">
+        <div
+          *ngFor="let image of fotos; let index = index"
+          class="col-12 md:col-4"
+          key="index"
+        >
+          <img
+            [src]="
+              previsualizacion == null
+                ? '../../../../assets/noFoto.png'
+                : previsualizacion
+            "
+            [alt]="image.titulo"
+            class="img-responsive border-round"
+            style="cursor: pointer"
+            (click)="imageClick(index)"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

@@ -159,4 +159,50 @@
       </div>
     </div>
   </form>
+
+  <div class="hidden md:block">
+    <hr class="divisor mt-6 mb-7" />
+    <h3 class="text-4xl md:text-6xl color-principal text-center uppercase">
+      Previsualización
+    </h3>
+    <div class="grid justify-content-center mt-4">
+      <div class="col-12 md:col-7">
+        <p-galleria
+          [value]="carrusel"
+          [responsiveOptions]="responsiveOptions"
+          [numVisible]="4"
+          [circular]="true"
+          [autoPlay]="true"
+          [transitionInterval]="3000"
+        >
+          <ng-template pTemplate="item" let-slider>
+            <img
+              [src]="
+                previsualizacion == null
+                  ? '../../../../assets/noFoto.png'
+                  : previsualizacion
+              "
+              [alt]="slider.titulo"
+              class="img-principal"
+            />
+          </ng-template>
+          <ng-template pTemplate="caption" let-slider>
+            <div class="text-center px-1 md:px-3">
+              <h4 class="color-principal text-3xl md:text-4xl mt-1 mb-1">
+                {{ slider.titulo == "" ? "Título..." : slider.titulo }}
+              </h4>
+              <div
+                class="text-lg"
+                [innerHtml]="
+                  slider.contenido == ''
+                    ? 'Contenido...'
+                    : (slider.contenido | convertidorHtml)
+                "
+              ></div>
+            </div>
+          </ng-template>
+        </p-galleria>
+      </div>
+    </div>
+  </div>
 </div>

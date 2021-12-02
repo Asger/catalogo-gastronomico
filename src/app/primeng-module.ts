@@ -30,6 +30,7 @@ import { RatingModule } from 'primeng/rating';
 import { RippleModule } from 'primeng/ripple';
 import { PanelMenuModule } from 'primeng/panelmenu';
 import { SlideMenuModule } from 'primeng/slidemenu';
+import { ImageModule } from 'primeng/image';
 
 @NgModule({
   exports: [
@@ -64,6 +65,7 @@ import { SlideMenuModule } from 'primeng/slidemenu';
     RippleModule,
     PanelMenuModule,
     SlideMenuModule,
+    ImageModule,
   ],
 })
 export class PrimengModule {}

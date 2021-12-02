@@ -17,6 +17,12 @@ export class NuevaFotoComponent implements OnInit {
   private imagen: any;
   private imagenOriginal: any;
   public fecha!: Date | undefined;
+  public responsiveOptions: any;
+  public fotos!: IFoto[];
+
+  displayCustom!: boolean;
+  activeIndex: number = 0;
+
   foto: IFoto = {
     titulo: '',
     categoria: '',
@@ -28,7 +34,22 @@ export class NuevaFotoComponent implements OnInit {
     private sanitizer: DomSanitizer,
     private activetedRoute: ActivatedRoute,
     private messageService: MessageService
-  ) {}
+  ) {
+    this.responsiveOptions = [
+      {
+        breakpoint: '1024px',
+        numVisible: 5,
+      },
+      {
+        breakpoint: '768px',
+        numVisible: 3,
+      },
+      {
+        breakpoint: '560px',
+        numVisible: 1,
+      },
+    ];
+  }
 
   // Creo el formulario, junto a sus respectivas propiedades y validaciones.
   public fotoForm = new FormGroup({
@@ -64,6 +85,7 @@ export class NuevaFotoComponent implements OnInit {
         (err) => console.error(err)
       );
     }
+    this.fotos = [this.foto];
   }
 
   // Este método es el encargado de llamar al servicio o intermediario para poder crear una foto.
@@ -132,5 +154,10 @@ export class NuevaFotoComponent implements OnInit {
         life: 3500,
       });
     }
+  }
+
+  imageClick(index: number) {
+    this.activeIndex = index;
+    this.displayCustom = true;
   }
 }

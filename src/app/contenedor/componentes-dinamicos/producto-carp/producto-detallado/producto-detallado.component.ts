@@ -18,6 +18,7 @@ export class ProductoDetalladoComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    // Obtengo el parametro de las rutas 
     this.activatedRoute.paramMap.subscribe((params: ParamMap) => {
       this.seccion = params.get('id');
       if (this.seccion) {

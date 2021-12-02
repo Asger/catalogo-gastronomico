@@ -3,11 +3,18 @@
     <div class="grid grid-nogutter">
       <div class="col-12 md:col-12">
         <div class="thumbnail">
-          <img
+          <p-image
+            *ngIf="producto.nombre"
             class="img-responsive"
             [src]="producto.imagen"
             [alt]="producto.nombre"
-          />
+            [preview]="true"
+          ></p-image>
+          <!--    <img
+            class="img-responsive"
+            [src]="producto.imagen"
+            [alt]="producto.nombre"
+          /> -->
         </div>
       </div>
       <div class="col-12 md:col-12">

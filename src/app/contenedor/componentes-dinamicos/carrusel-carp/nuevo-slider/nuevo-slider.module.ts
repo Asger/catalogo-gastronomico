@@ -5,6 +5,7 @@ import { NuevoSliderRoutingModule } from './nuevo-slider-routing.module';
 import { NuevoSliderComponent } from './nuevo-slider.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PrimengModule } from 'src/app/primeng-module';
+import { ConvertidorHtmlModule } from 'src/app/shared/pipes/convertidor-html/convertidor-html.module';
 
 @NgModule({
   declarations: [NuevoSliderComponent],
@@ -14,6 +15,7 @@ import { PrimengModule } from 'src/app/primeng-module';
     FormsModule,
     ReactiveFormsModule,
     PrimengModule,
+    ConvertidorHtmlModule
   ],
 })
 export class NuevoSliderModule {}

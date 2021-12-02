@@ -56,7 +56,7 @@
       </ng-template>
       <ng-template pTemplate="thumbnail" let-slider>
         <div class="grid grid-nogutter justify-center caja-img p-1">
-          <img [src]="slider.imagen"  />
+          <img [src]="slider.imagen" />
         </div>
       </ng-template>
       <ng-template pTemplate="caption" let-slider>
@@ -73,8 +73,90 @@
     </p-galleria>
   </div>
 </div>
-
-<div class="surface-section container pt-6 pb-0 text-center" #target>
+<div class="h-3rem" #target></div>
+<div class="surface-ground container mt-7">
+  <div class="text-900 font-bold text-5xl md:text-6xl mb-4 text-center">
+    Mantente al tanto de nuestro restaurante
+  </div>
+  <div class="grid mt-6">
+    <div class="col-12 md:col-6 lg:col-4">
+      <div class="surface-0 shadow-8 px-3 py-4 border-round borde-left">
+        <div class="flex justify-content-between mb-3">
+          <div>
+            <span class="block text-500 font-medium mb-3">Nuestro BLOG</span>
+            <div class="text-900 font-medium text-xl mb-2 text-color">
+              Publicamos avisos, eventos y novedades de nuestro negocio.
+            </div>
+          </div>
+        </div>
+        <div class="flex align-items-center justify-content-between">
+          <button
+            pButton
+            pRipple
+            label="Ir a la sección"
+            class="p-button-outlined border-principal"
+            routerLink="/blog"
+          ></button>
+          <div class="bg-icon p-2 border-round">
+            <i class="fas fa-pen color-principal text-3xl"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 md:col-6 lg:col-4">
+      <div class="surface-0 shadow-8 px-3 py-4 border-round borde-left">
+        <div class="flex justify-content-between mb-3">
+          <div>
+            <span class="block text-500 font-medium mb-3"
+              >Descargate nuestra app</span
+            >
+            <div class="text-900 font-medium text-xl mb-2">
+              Con nuestra app, mejorara tu experiencia de navegación.
+            </div>
+          </div>
+        </div>
+        <div class="flex align-items-center justify-content-between">
+          <a
+            pButton
+            pRipple
+            label="Descargar"
+            class="p-button-outlined border-principal btn-descarga"
+            href="#"
+          ></a>
+          <div class="bg-icon p-2 border-round">
+            <i class="fas fa-mobile-alt color-principal text-3xl"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 md:col-6 lg:col-4">
+      <div class="surface-0 shadow-8 px-3 py-4 border-round borde-left">
+        <div class="flex justify-content-between mb-3">
+          <div>
+            <span class="block text-500 font-medium mb-3">Conócenos</span>
+            <div class="text-900 font-medium text-xl mb-2">
+              Descubre cuales son nuestros objetivos, valores y equipo.
+            </div>
+          </div>
+        </div>
+        <div class="flex align-items-center justify-content-between">
+          <button
+            pButton
+            pRipple
+            label="Ir a la sección"
+            class="p-button-outlined border-principal"
+            routerLink="/nosotros"
+          ></button>
+          <div class="bg-icon p-2 border-round">
+            <i class="fas fa-users color-principal text-3xl"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<hr class="divisor mt-6 mb-7" />
+<div class="surface-section container pb-0 text-center">
   <h2 class="text-5xl md:text-6xl text-white mt-0">¿Qué te ofrecemos?</h2>
   <h3 class="text-xl md:text-3xl color-principal">
     Una experiencia gastronómica única
@@ -150,7 +232,7 @@
   </div>
 </div>
 <hr class="divisor mt-6 mb-7" />
-<div class="grid grid-nogutter surface-section text-800 container">
+<div class="grid grid-nogutter surface-section text-800 container mb-7">
   <div
     class="
       col-12
@@ -221,87 +303,7 @@
     </p-carousel>
   </div>
 </div>
-<hr class="divisor mt-6 mb-7" />
 
-<div class="surface-ground container mt-4 mb-6">
-  <div class="text-900 font-bold text-5xl md:text-6xl mb-4 text-center">
-    Nuestras secciones más relevantes
-  </div>
-  <div class="grid mt-6">
-    <div class="col-12 md:col-6 lg:col-4">
-      <div class="surface-0 shadow-8 px-3 py-4 border-round borde-left">
-        <div class="flex justify-content-between mb-3">
-          <div>
-            <span class="block text-500 font-medium mb-3">Nuestro BLOG</span>
-            <div class="text-900 font-medium text-xl mb-2 text-color">
-              Publicamos avisos, eventos y novedades de nuestro negocio.
-            </div>
-          </div>
-        </div>
-        <div class="flex align-items-center justify-content-between">
-          <button
-            pButton
-            pRipple
-            label="Ir a la sección"
-            class="p-button-outlined border-principal"
-            routerLink="/blog"
-          ></button>
-          <div class="bg-icon p-2 border-round">
-            <i class="fas fa-pen color-principal text-3xl"></i>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="col-12 md:col-6 lg:col-4">
-      <div class="surface-0 shadow-8 px-3 py-4 border-round borde-left">
-        <div class="flex justify-content-between mb-3">
-          <div>
-            <span class="block text-500 font-medium mb-3">Contactanos</span>
-            <div class="text-900 font-medium text-xl mb-2">
-              Puedes enviarnos un Email, llamarnos o visitarnos presencialmente.
-            </div>
-          </div>
-        </div>
-        <div class="flex align-items-center justify-content-between">
-          <button
-            pButton
-            pRipple
-            label="Ir a la sección"
-            class="p-button-outlined border-principal"
-            routerLink="/contacto"
-          ></button>
-          <div class="bg-icon p-2 border-round">
-            <i class="fas fa-envelope color-principal text-3xl"></i>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="col-12 md:col-6 lg:col-4">
-      <div class="surface-0 shadow-8 px-3 py-4 border-round borde-left">
-        <div class="flex justify-content-between mb-3">
-          <div>
-            <span class="block text-500 font-medium mb-3">Conócenos</span>
-            <div class="text-900 font-medium text-xl mb-2">
-              Descubre cuales son nuestros objetivos, valores y equipo.
-            </div>
-          </div>
-        </div>
-        <div class="flex align-items-center justify-content-between">
-          <button
-            pButton
-            pRipple
-            label="Ir a la sección"
-            class="p-button-outlined border-principal"
-            routerLink="/nosotros"
-          ></button>
-          <div class="bg-icon p-2 border-round">
-            <i class="fas fa-users color-principal text-3xl"></i>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
 <ng-template #loading>
   <p-progressSpinner class="my-auto" strokeWidth="4"></p-progressSpinner>
 </ng-template>

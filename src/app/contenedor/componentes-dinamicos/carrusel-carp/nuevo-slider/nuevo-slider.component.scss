@@ -17,3 +17,13 @@ select.ng-valid.ng-touched {
 .errores {
   color: red;
 }
+.img-principal {
+  width: 100%;
+  object-fit: cover;
+  height: 85vh;
+}
+.divisor {
+  text-align: center;
+  width: 80%;
+  border-color: #ff8800;
+}

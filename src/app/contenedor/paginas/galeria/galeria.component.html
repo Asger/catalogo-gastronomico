@@ -4,12 +4,15 @@
     <p-galleria [value]="fotosRestaurante" [(visible)]="displayCustom" [(activeIndex)]="activeIndex" [responsiveOptions]="responsiveOptions" [containerStyle]="{'max-width': '850px'}" [numVisible]="7"
     [circular]="true" [fullScreen]="true" [showItemNavigators]="true" [showThumbnails]="false" [baseZIndex]="100000">
     <ng-template pTemplate="item" let-item>
-        <img [src]="item.imagen" style="width: 100%; display: block;"/>
+        <img [src]="item.imagen" class="border-round" style="width: 100%; display: block;"/>
+        <div class="caption-img p-3 border-round">
+            {{item.titulo}}
+        </div>
     </ng-template>
     </p-galleria>
     <div *ngIf="fotosRestaurante" class="grid">
         <div *ngFor="let image of fotosRestaurante; let index = index;" class="col-12 md:col-4" key="index">
-            <img [src]="image.imagen" [alt]="image.titulo" class="img-responsive" style="cursor: pointer" (click)="imageClick(index)"/>
+            <img [src]="image.imagen" [alt]="image.titulo" class="img-responsive border-round" style="cursor: pointer" (click)="imageClick(index)"/>
         </div>
     </div>
     <hr class="divisor mt-6 mb-7" />
@@ -17,12 +20,15 @@
     <p-galleria [value]="fotosPlatillos" [(visible)]="displayCustom2" [(activeIndex)]="activeIndex2" [responsiveOptions]="responsiveOptions" [containerStyle]="{'max-width': '850px'}" [numVisible]="7"
     [circular]="true" [fullScreen]="true" [showItemNavigators]="true" [showThumbnails]="false" [baseZIndex]="100000">
     <ng-template pTemplate="item" let-item>
-        <img [src]="item.imagen" style="width: 100%; display: block;"/>
+        <img [src]="item.imagen" class="border-round" style="width: 100%; display: block;"/>
+        <div class="caption-img p-3 border-round">
+            {{item.titulo}}
+        </div>
     </ng-template>
     </p-galleria>
     <div *ngIf="fotosPlatillos" class="grid">
         <div *ngFor="let image of fotosPlatillos; let index = index;" class="col-12 md:col-4" key="index">
-            <img [src]="image.imagen" [alt]="image.titulo" class="img-responsive" style="cursor: pointer" (click)="imageClickdos(index)"/>
+            <img [src]="image.imagen" [alt]="image.titulo" class="img-responsive border-round" style="cursor: pointer" (click)="imageClickdos(index)"/>
         </div>
     </div>
 </div>

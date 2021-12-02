@@ -230,4 +230,66 @@
       </div>
     </div>
   </form>
+
+  <div class="hidden md:block">
+    <hr class="divisor mt-6 mb-7" />
+    <h3 class="text-4xl md:text-6xl color-principal text-center uppercase">
+      Previsualización
+    </h3>
+    <div class="container mb-6">
+      <div class="card border-round">
+        <div class="grid grid-nogutter">
+          <div class="col-12 md:col-12">
+            <div class="thumbnail">
+              <img
+                class="img-responsive"
+                [src]="
+                  previsualizacion == null
+                    ? '../../../../assets/noFoto.png'
+                    : previsualizacion
+                "
+                [alt]="producto.nombre"
+              />
+            </div>
+          </div>
+          <div class="col-12 md:col-12">
+            <div class="info px-3">
+              <h1
+                class="
+                  text-center text-3xl
+                  md:text-4xl
+                  lg:text-5xl
+                  color-principal
+                "
+              >
+                {{ producto.nombre == "" ? "Nombre..." : producto.nombre }}
+              </h1>
+              <div class="text-center my-4 text-white">
+                <div class="text-4xl mb-3 font-bold">
+                  ${{ producto.precio == 0 ? "Precio..." : producto.precio }}
+                </div>
+                <div class="text-xl">
+                  {{
+                    producto.categoria == ""
+                      ? "Categoría..."
+                      : producto.categoria
+                  }}
+                </div>
+              </div>
+              <div class="separator mx-auto my-4"></div>
+
+              <div
+                class="px-1 text-info"
+                [innerHtml]="
+                  producto.contenido == ''
+                    ? 'Contenido...'
+                    : (producto.contenido | convertidorHtml)
+                "
+              ></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

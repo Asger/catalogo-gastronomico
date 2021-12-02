@@ -179,4 +179,71 @@
       </div>
     </div>
   </form>
+  <div class="hidden md:block">
+    <hr class="divisor mt-6 mb-7" />
+    <h3 class="text-4xl md:text-6xl color-principal text-center uppercase">
+      Previsualización
+    </h3>
+    <div class="container mb-6">
+      <div class="grid">
+        <div class="col-12">
+          <section class="dark">
+            <article class="postcard dark blue">
+              <div class="postcard__img_link">
+                <img
+                  class="postcard__img"
+                  [src]="
+                    previsualizacion == null
+                      ? '../../../../assets/noFoto.png'
+                      : previsualizacion
+                  "
+                  [alt]="blog.titulo"
+                />
+              </div>
+              <div class="postcard__text">
+                <h1 class="postcard__title blue">
+                  <a class="font-bold">{{
+                    blog.titulo == "" ? "Título..." : blog.titulo
+                  }}</a>
+                </h1>
+                <div
+                  class="
+                    postcard__subtitle
+                    small
+                    mt-3
+                    mb-2
+                    flex
+                    justify-content-between
+                  "
+                >
+                  <time>
+                    <i class="fas fa-calendar-alt mr-2 color-principal"></i>
+                    {{
+                      blog.horaCreacion == undefined
+                        ? "Fecha..."
+                        : (blog.horaCreacion?.valueOf() | date: "dd/MM/yyyy")
+                    }}
+                  </time>
+                </div>
+                <div class="postcard__bar"></div>
+                <div
+                  class="postcard__preview-txt"
+                  [innerHtml]="
+                    blog.contenido == ''
+                      ? 'Contenido...'
+                      : (blog.contenido | convertidorHtml)
+                  "
+                ></div>
+                <ul class="postcard__tagbox">
+                  <li class="tag__item px-2 py-1 text-base">
+                    {{ blog.categoria == "" ? "Categoría..." : blog.categoria }}
+                  </li>
+                </ul>
+              </div>
+            </article>
+          </section>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

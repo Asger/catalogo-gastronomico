@@ -17,6 +17,8 @@ export class NuevoSliderComponent implements OnInit {
   private imagen: any;
   private imagenOriginal: any;
   public fecha!: Date | undefined;
+  public responsiveOptions: any;
+  public carrusel!: ICarrusel[];
   slider: ICarrusel = {
     titulo: '',
     contenido: '',
@@ -28,7 +30,22 @@ export class NuevoSliderComponent implements OnInit {
     private sanitizer: DomSanitizer,
     private activetedRoute: ActivatedRoute,
     private messageService: MessageService
-  ) {}
+  ) {
+    this.responsiveOptions = [
+      {
+        breakpoint: '1024px',
+        numVisible: 5,
+      },
+      {
+        breakpoint: '768px',
+        numVisible: 3,
+      },
+      {
+        breakpoint: '560px',
+        numVisible: 1,
+      },
+    ];
+  }
 
   // Creo el formulario, junto a sus respectivas propiedades y validaciones.
   public sliderForm = new FormGroup({
@@ -67,6 +84,7 @@ export class NuevoSliderComponent implements OnInit {
         (err) => console.error(err)
       );
     }
+    this.carrusel = [this.slider];
   }
 
   // Este método es el encargado de llamar al servicio o intermediario para poder crear un slider en el carrusel.

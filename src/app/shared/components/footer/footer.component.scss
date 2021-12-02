@@ -29,6 +29,23 @@ footer {
     width: 50%;
     border-color: #ff8800;
   }
+  .btn-descargar {
+    text-decoration: none;
+    padding: 1em;
+    border: 2px solid #ff8800;
+    border-radius: 5px;
+    background-color: #ff8800;
+    color: #000;
+    transition: all 0.3s ease-in;
+    &:hover {
+      border: 2px solid #ff8800;
+      background-color: #000;
+      color: #ff8800;
+    }
+    i{
+        font-size: 1.3em;
+    }
+  }
 }
 /* Redes sociales */
 .redes-sociales {
