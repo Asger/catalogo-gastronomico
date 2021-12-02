@@ -25,6 +25,11 @@ export class ContenedorGlobalComponent implements OnInit {
         routerLink: 'inicio',
       },
       {
+        label: 'Nosotros',
+        icon: 'fas fa-users',
+        routerLink: 'nosotros',
+      },
+      {
         label: 'Nuestra carta',
         icon: 'fas fa-clipboard',
         items: [
@@ -94,9 +99,9 @@ export class ContenedorGlobalComponent implements OnInit {
         routerLink: 'galeria',
       },
       {
-        label: 'Nosotros',
-        icon: 'fas fa-users',
-        routerLink: 'nosotros',
+        label: 'Ayuda y soporte',
+        icon: 'fas fa-question-circle',
+        routerLink: 'ayuda-soporte',
       },
       {
         label: 'Contacto',

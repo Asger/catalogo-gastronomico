@@ -68,6 +68,13 @@ const routes: Routes = [
             './contenedor/componentes-dinamicos/producto-carp/producto-detallado/producto-detallado.module'
           ).then((m) => m.ProductoDetalladoModule),
       },
+      {
+        path: 'ayuda-soporte',
+        loadChildren: () =>
+          import(
+            './contenedor/paginas/ayuda-soporte/ayuda-soporte.module'
+          ).then((m) => m.AyudaSoporteModule),
+      },
       { path: '', redirectTo: 'inicio', pathMatch: 'full' },
     ],
   },
