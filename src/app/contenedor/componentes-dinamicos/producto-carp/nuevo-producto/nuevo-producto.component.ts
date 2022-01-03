@@ -16,7 +16,7 @@ export class NuevoProductoComponent implements OnInit {
   public previsualizacion: string | undefined;
   private imagen: any;
   private imagenOriginal: any;
-  public fecha!: Date | undefined;
+  public fecha!: Date;
   //public categoria!: string;
   producto: IProducto = {
     nombre: '',
@@ -63,7 +63,9 @@ export class NuevoProductoComponent implements OnInit {
             this.producto.precio = res.precio;
             this.producto.categoria = res.categoria;
             this.producto.relevancia = res.relevancia;
-            this.fecha = res.horaCreacion?.toDate();
+            if (res.horaCreacion) {
+              this.fecha = res.horaCreacion?.toDate();
+            }
 
             this.producto.id = params.id;
             this.imagen = res.imagen;
